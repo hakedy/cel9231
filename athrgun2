@@ -1,0 +1,893 @@
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+LocalScript1 = Instance.new("LocalScript")
+Tool2 = Instance.new("Tool")
+Part3 = Instance.new("Part")
+Part4 = Instance.new("Part")
+Part5 = Instance.new("Part")
+CylinderMesh6 = Instance.new("CylinderMesh")
+Sound7 = Instance.new("Sound")
+Part8 = Instance.new("Part")
+Part9 = Instance.new("Part")
+UnionOperation10 = Instance.new("UnionOperation")
+Part11 = Instance.new("Part")
+LocalScript12 = Instance.new("LocalScript")
+Script13 = Instance.new("Script")
+Model0.Name = "TheArturZh's Gun Script v.4.3.1.1"
+Model0.Parent = mas
+LocalScript1.Name = "READ ME"
+LocalScript1.Parent = Model0
+table.insert(cors,sandbox(LocalScript1,function()
+--[[TheArturZh's Gun Script v4.3.1]]--
+--[[
+	THIS VERSION OF SCRIPT WAS MADE FOR PLACES WITH FILTERING ENABLED ONLY.
+	To enable filtering go to game.Workspace properties -> Behavior and check FilteringEnabled.
+	
+	I made this script to make gun making easy as I can.
+	
+	Don't remove any part of the gun except part called "A1". Just make these parts invisible,
+	script will not work correctly without them.
+	
+	AimPart - Defines the position of the camera while aiming.
+	(If you disabled aiming in the Settings table you can remove this part.)
+	BulletSpawn - Defines the position of the start of the bullet tracer.
+	Handle - Defines the position of the grip.
+	MagDrop - Defines the position of the magazine ejection while reloading.
+	The object named "Magazine" must be a child of the MagDrop part.
+	The Magazine must be a SNIGLE BRICK/UNION OPERATION, NOT MODEL. Part can have a mesh as child.
+	ShellDrop - Defines the position of the point from which shells will ejected out.
+	
+	Also this script now works with R15 but the new walking animation makes it almost unplayabe. :(
+	(New idle animation is fixed(removed))
+	
+	--Sorry for grammar mistakes, I'm russian.
+--]]
+--[[CONTROLS]]
+--[[
+Left Mouse Button - Shoot
+Right Mouse Button - Aim
+V - change mode
+Left Shift - Sprint
+--]]
+end))
+Tool2.Name = "New Weapon"
+Tool2.Parent = Model0
+Part3.Name = "A1"
+Part3.Parent = Tool2
+Part3.CFrame = CFrame.new(112.475159, 1.19999897, 18.6385994, 1, 0, -0, 0, 0, 1, 0, -1, 0)
+Part3.Orientation = Vector3.new(-90, 0, 0)
+Part3.Position = Vector3.new(112.475159, 1.19999897, 18.6385994)
+Part3.Rotation = Vector3.new(-90, 0, 0)
+Part3.Size = Vector3.new(0.600000024, 1.60000014, 0.600000024)
+Part3.Anchored = true
+Part3.BottomSurface = Enum.SurfaceType.Weld
+Part3.CanCollide = false
+Part3.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part3.FormFactor = Enum.FormFactor.Custom
+Part3.formFactor = Enum.FormFactor.Custom
+Part4.Name = "AimPart"
+Part4.Parent = Tool2
+Part4.CFrame = CFrame.new(112.471802, 1.88873601, 21.7221603, 0.999999642, -1.35795943e-07, -2.98023224e-08, 1.35795972e-07, 1, -1.4589169e-07, 2.98023224e-08, 1.45891619e-07, 0.999999642)
+Part4.Position = Vector3.new(112.471802, 1.88873601, 21.7221603)
+Part4.Color = Color3.new(0.388235, 0.372549, 0.384314)
+Part4.Transparency = 1
+Part4.Size = Vector3.new(0.200000003, 0.200000003, 0.200000003)
+Part4.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.BrickColor = BrickColor.new("Dark stone grey")
+Part4.CanCollide = false
+Part4.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Part4.brickColor = BrickColor.new("Dark stone grey")
+Part4.FormFactor = Enum.FormFactor.Custom
+Part4.formFactor = Enum.FormFactor.Custom
+Part5.Name = "BulletSpawn"
+Part5.Parent = Tool2
+Part5.CFrame = CFrame.new(112.464157, 1.19998801, 17.918602, 0, 0, 1, 0.999999821, 2.98023224e-08, 0, -2.98023224e-08, 0.999999821, 0)
+Part5.Orientation = Vector3.new(0, 90, 90)
+Part5.Position = Vector3.new(112.464157, 1.19998801, 17.918602)
+Part5.Rotation = Vector3.new(90, 90, 0)
+Part5.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part5.Size = Vector3.new(0.400000006, 0.200000003, 0.810000002)
+Part5.Anchored = true
+Part5.BrickColor = BrickColor.new("Really black")
+Part5.CanCollide = false
+Part5.brickColor = BrickColor.new("Really black")
+Part5.FormFactor = Enum.FormFactor.Custom
+Part5.formFactor = Enum.FormFactor.Custom
+CylinderMesh6.Parent = Part5
+Sound7.Parent = Part5
+Sound7.SoundId = "http://www.roblox.com/asset/?id=2920959"
+Part8.Name = "Handle"
+Part8.Parent = Tool2
+Part8.CFrame = CFrame.new(112.475174, 0.800005019, 19.7386055, 1, 0, 0, 0, 0.999999702, 5.96046448e-08, 0, -5.96046448e-08, 0.999999702)
+Part8.Position = Vector3.new(112.475174, 0.800005019, 19.7386055)
+Part8.Size = Vector3.new(0.600000024, 1.39999998, 0.599999964)
+Part8.Anchored = true
+Part8.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part8.CanCollide = false
+Part8.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part8.FormFactor = Enum.FormFactor.Custom
+Part8.formFactor = Enum.FormFactor.Custom
+Part9.Name = "MagDrop"
+Part9.Parent = Tool2
+Part9.CFrame = CFrame.new(112.475151, 0.100005999, 19.7386055, 1, 0, 0, 0, 0.999999702, 5.96046448e-08, 0, -5.96046448e-08, 0.999999702)
+Part9.Position = Vector3.new(112.475151, 0.100005999, 19.7386055)
+Part9.Size = Vector3.new(0.600000024, 0.200000003, 0.599999964)
+Part9.Anchored = true
+Part9.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+Part9.CanCollide = false
+Part9.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+Part9.FormFactor = Enum.FormFactor.Custom
+Part9.formFactor = Enum.FormFactor.Custom
+UnionOperation10.Name = "Magazine"
+UnionOperation10.Parent = Part9
+UnionOperation10.CFrame = CFrame.new(112.475159, 0.599987984, 19.7386131, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+UnionOperation10.Position = Vector3.new(112.475159, 0.599987984, 19.7386131)
+UnionOperation10.Color = Color3.new(0.388235, 0.372549, 0.384314)
+UnionOperation10.Transparency = 1
+UnionOperation10.Size = Vector3.new(0.5041008, 1.10873985, 0.604921341)
+UnionOperation10.Anchored = true
+UnionOperation10.BrickColor = BrickColor.new("Dark stone grey")
+UnionOperation10.CanCollide = false
+UnionOperation10.Reflectance = 0.25
+UnionOperation10.brickColor = BrickColor.new("Dark stone grey")
+UnionOperation10.UsePartColor = true
+Part11.Name = "ShellDrop"
+Part11.Parent = Tool2
+Part11.CFrame = CFrame.new(112.725159, 1.19998801, 19.4386101, -1.49011612e-08, 0, -0.999999762, 0, 1, 0, 0.999999762, 0, -1.49011612e-08)
+Part11.Orientation = Vector3.new(0, -90, 0)
+Part11.Position = Vector3.new(112.725159, 1.19998801, 19.4386101)
+Part11.Rotation = Vector3.new(-180, -89.9599991, -180)
+Part11.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part11.Size = Vector3.new(0.400000006, 0.200000003, 0.200000003)
+Part11.Anchored = true
+Part11.BrickColor = BrickColor.new("Really black")
+Part11.CanCollide = false
+Part11.brickColor = BrickColor.new("Really black")
+Part11.FormFactor = Enum.FormFactor.Custom
+Part11.formFactor = Enum.FormFactor.Custom
+LocalScript12.Name = "LocalGunScript"
+LocalScript12.Parent = Tool2
+table.insert(cors,sandbox(LocalScript12,function()
+--[[
+	========= =            ===                        ===== =
+	    =     =           =   =                           = =
+	    =     =           =   =                           = =
+	    =     = ==   ===  =   = = ==   =   =  = = ==     =  = ==
+	    =     ==  = =   = ===== ==  = ===  =  = ==  =  =    ==  =
+	    =     =   = ===== =   = =      =   =  = =     =     =   =
+        =     =   = =     =   = =      =   =  = =     =     =   =
+        =     =   = =     =   = =      = = =  = =     =     =   =
+        =     =   =  ===  =   = =       =   ==  =     ===== =   =
+--]]
+print("Loading weapon script")
+
+--[[WEAPON SETTINGS]]
+local Settings = {
+	 Name = "New Gun" --Name of the gun
+	,SprintAnimationType = "Heavy" --"Light" - for handguns,"Heavy" for heavier weapons like assault rifles
+	,SprintEnabled = true --Allows player to sprint by pressing "Shift" key
+	--Arms
+	,FakeArms = true --Arms that visible is first person camera mode
+	,FakeArmTransparency = 0 --Transparency of arms that visible in first person camera mode.
+	,CharacterMeshes = true -- 3.0 and 2.0 arm meshes support.
+	--Ammo
+	,MaxAmmo = 30 --Max loaded ammo
+	,StartAmmo = 30 --Initial loaded ammo
+	,MaxStoredAmmo = 120 --Max stored ammo
+	,StartStoredAmmo = 90 --Initial stored ammo
+	--Sound
+	,SoundAssetURL = "http://www.roblox.com/asset/?id=2920959" --Shoot sound url
+	--Fire mode
+	,AutoFireAble = true --Auto fire mode available
+	,MultiShotFireModes = {3,4} --Custom fire modes(The number is the count of shots per gun activation)
+	,SnigleShotAble = true --Snigle shot fire mode available
+	,RPM = 600 --[[Rounds per minute. Maximum 600. From values ​​above 600 there will be no effect.
+	(It happens because you can't create really short delays using the wait() function) ]]
+	--Accuracy
+	,Recoil = 0.8
+	,Spread = 15
+	,AimingEnabled = true
+	,AimFOV = 40 --FOV while aiming
+	,SpreadReduction = 7 --Spread reduction while aiming
+	,Range = 1000 --Raycast range (Max:1000, Min:0)
+	--Cursour
+	,CstCursour = "http://www.roblox.com/asset/?id=7380287" --Custom cursour asset URL
+	,CstCursourEnabled = true --Custom cursour enabled(true)/disabled(false)
+	--Damage
+	,Headshot = 120
+	,LegsDmg = 24
+	,HandsDmg = 33
+	,TorsoDmg = 42
+	,AntiTK = true --Anti-teamkill
+	--[[Other]]--
+	,DestroyablePartsName = "WallDestroyable" --Parts with this name will be unwelded and unanchored after being hit
+	,WalkSpeedModifier = -2 --Character walking speed mofifier while gun is equipped.
+	,SprintSpeedModifier = 6 --Character walking speed modifier while sprinting
+	,InvisibleMagazinePart = true
+	--Arm Positions
+	,RightPos = CFrame.new(-0.75, 1, 0.5)*CFrame.Angles(math.rad(-90), 0, 0) --Right arm position while gun is equipped.
+	,LeftPos = CFrame.new(1, 0.5, 0.5)*CFrame.Angles(math.rad(-90), math.rad(45), 0) --Left arm position while gun is equipped.
+	,R15AimOffset = CFrame.new(0.0,0.20,0)
+}
+
+
+--[[!!!DO NOT EDIT VARIABLES BELOW!!!]]
+--[[Other Variables]]
+--[[Services]]
+local Players = game:GetService("Players")
+local Debris = game:GetService("Debris")
+local UserInputService = game:GetService("UserInputService")
+
+local Enabled = false
+local Equipped = false
+local ReloadingAnimation
+local Owner = Players.LocalPlayer
+local Mouse = Owner:GetMouse()
+local Gun = script.Parent
+local Camera = workspace.CurrentCamera
+local Ignore_Model = workspace:WaitForChild("Ignore_Model")
+Ignore_Model.Name = "Ignore_Model"
+local Ray_Ignore = {Ignore_Model, Camera}
+local SvMaxForce = Vector3.new(4000,4000,4000)
+
+local ShootingMode = "Auto"
+if Settings.AutoFireAble then
+	ShootingMode = "Auto"
+elseif Settings.SnigleShotAble then
+	ShootingMode = "Snigle"
+elseif Settings.MultiShotFireModes[1] then
+	ShootingMode = Settings.MultiShotFireModes[1]
+end
+local isSprinting = false
+
+--Parts
+local Handle = Gun:WaitForChild("Handle")
+local BulletSpawn = Gun:WaitForChild("BulletSpawn")
+local ShellDrop = Gun:WaitForChild("ShellDrop")
+local AimPart
+if Settings.AimingEnabled then
+	AimPart = Gun:WaitForChild("AimPart")
+end
+
+--[[Public values, accessible for all client-side scripts]]
+local Ammo = Settings.StartAmmo
+local StoredAmmo = Settings.StartStoredAmmo
+local AmmoVal = Instance.new("NumberValue")
+AmmoVal.Parent = Gun
+AmmoVal.Name = "CAmmo"
+AmmoVal.Value = Ammo
+local StoredAmmoVal = Instance.new("NumberValue")
+StoredAmmoVal.Parent = Gun
+StoredAmmoVal.Name = "StoredAmmo"
+StoredAmmoVal.Value = StoredAmmo
+local NameVal = Instance.new("StringValue")
+NameVal.Parent = Gun
+NameVal.Name = "NameVal"
+NameVal.Value = Settings.Name
+local ShootingModeVal = Instance.new("StringValue")
+ShootingModeVal.Parent = Gun
+ShootingModeVal.Name = "ShootingModeVal"
+ShootingModeVal.Value = tostring(ShootingMode)
+local MaxAmmoVal = Instance.new("NumberValue")
+MaxAmmoVal.Parent = Gun
+MaxAmmoVal.Name = "MaxAmmo"
+MaxAmmoVal.Value = Settings.MaxAmmo
+
+--Aiming
+local Spread = Settings.Spread
+local CurrentFov = Camera.FieldOfView
+local Orig_Grip = Gun.GripPos
+if Settings.AimingEnabled then
+	local Aiming
+	AimPartOffset = CFrame.new()
+	AimGripOffset = Vector3.new(0, 0, 0)
+	LeftAimPos = CFrame.new(1, 0.5, 0.5)*CFrame.Angles(math.rad(-100), math.rad(45), 0)
+	AimAnimFrames = 50
+	AimAnimTime = 0.1
+	InitialCursour = Mouse.Icon
+end
+--[[Remote Functions]]
+local WPS = workspace:WaitForChild("WeaponServerScript")
+local ShootRF = WPS:WaitForChild("Shoot")
+local SetNeckRE = WPS:WaitForChild("SetNeck")
+local AimRF
+if Settings.AimingEnabled then
+	AimRF = WPS:WaitForChild("Aim")
+end
+local ReloadingAnimRF = WPS:WaitForChild("ReloadingAnimation")
+local HitNotAnchoredRF = WPS:WaitForChild("HitNotAnchored")
+local DestroyObjectRE = WPS:WaitForChild("DestroyObject")
+local SprintRE
+if Settings.SprintEnabled then
+	SprintRE = WPS:WaitForChild("Sprint")
+end
+--[[Morph]]--
+workspace:WaitForChild(Owner.Name)
+local Character
+local Humanoid
+local isR15 = false
+local Torso,Right_Arm,Left_Arm,Neck
+--Fake Arms
+local Fake_Arm_Right,Fake_Arm_Left,Fake_Lower_Arm_Right,Fake_Lower_Arm_Left
+local Left_Weld,Right_Weld,FixedArm,FixedArmWeld,FixedArmModel
+local Char_Ignore_Pos = 0
+
+local function DetectOwner()
+	Character = Owner.Character
+	Humanoid = Character.Humanoid
+	if Humanoid.RigType == Enum.HumanoidRigType.R15 then
+		isR15 = true
+		print("R15 Morph Detected")
+	end
+	if isR15 then
+		Torso = Character:FindFirstChild("UpperTorso")
+		Right_Arm = Character:FindFirstChild("RightUpperArm")
+		Left_Arm = Character:FindFirstChild("LeftUpperArm")
+		Neck = Character:FindFirstChild("Head").Neck
+	else
+		Torso = Character:FindFirstChild("Torso")
+		Right_Arm = Character:FindFirstChild("Right Arm")
+		Left_Arm = Character:FindFirstChild("Left Arm")
+		Neck = Torso.Neck
+	end
+	Char_Ignore_Pos = #Ray_Ignore
+	table.insert(Ray_Ignore,Character)
+end
+
+print("Variables declared")
+
+function shootRapid()
+	if ShootingMode == "Auto" then
+		repeat
+			shoot()
+		until Ammo <=0 or not OnFire
+	elseif tonumber(ShootingMode) then
+		for i=1,tonumber(ShootingMode) do
+			shoot()
+		end
+	elseif ShootingMode == "Snigle" then
+		shoot()
+	end
+end
+
+function shoot()
+	if Enabled and not isSprinting and not ReloadingAnimation then
+		if Ammo > 0 then
+			Enabled = false
+			--Local Variables
+			local ShellSS,v
+			--Ray
+			local Spread = CFrame.Angles(math.rad(math.random(-Spread, Spread)/10), math.rad(math.random(-Settings.Spread, Settings.Spread)/10), math.rad(math.random(-Spread, Spread)/10))
+			local Ray = Ray.new(Character.Head.Position, (CFrame.new(Character.Head.Position, Mouse.Hit.p) * Spread).lookVector.unit * Settings.Range)
+			local Hit,Pos = workspace:FindPartOnRayWithIgnoreList(Ray, Ray_Ignore)
+			local NoHit
+			print(Hit)
+			if Hit and Hit.Parent:FindFirstChild("Humanoid") and Hit.Parent.Humanoid.Health > 0 then
+				local Hit_Player = Players:GetPlayerFromCharacter(Hit.Parent)
+				if Settings.AntiTK and Hit_Player and not Hit_Player.Neutral and Hit_Player.TeamColor == Owner.TeamColor then
+					NoHit = true
+				end
+				if not Hit_Player then Hit_Player = {Character = Hit.Parent,Name = Hit.Parent.Name} end
+				if not NoHit then
+					local Damage,Headshot = nil,false
+					if Hit.Name == "Head" then
+						Damage = math.random(Settings.Headshot-10,Settings.Headshot+10)
+					elseif Hit.Name == "Left Arm" or Hit.Name == "Right Arm" then
+						Damage = math.random(Settings.HandsDmg-10, Settings.HandsDmg+10)
+					elseif Hit.Name == "Torso" or Hit.Name == "HumanoidRootPart" then
+						Damage = math.random(Settings.TorsoDmg-10, Settings.TorsoDmg+10)
+					else
+						Damage = math.random(Settings.LegsDmg-10, Settings.LegsDmg+10)
+					end
+					if Damage then
+						ShootRF:FireServer(BulletSpawn.CFrame.p,Pos,Hit_Player,Damage,Settings.Name,Headshot,BulletSpawn)
+					end
+				end
+			elseif Hit then
+				DestroyObjectRE:FireServer(Hit)
+				if Hit and Hit.Parent then
+					if Hit.Name ~= Settings.DestroyablePartsName then
+						if Hit.Parent.Name ~= "Ignore_Model" and not Hit.Parent:FindFirstChild("Humanoid") then
+							local Hit_Part = Instance.new("Part")
+							Hit_Part.Parent = Ignore_Model
+							Hit_Part.TopSurface = 0
+							Hit_Part.BottomSurface = 0
+							Hit_Part.Anchored = true
+							Hit_Part.CanCollide = false
+							Hit_Part.Size = Vector3.new()
+							Hit_Part.CFrame = CFrame.new(Pos) * CFrame.Angles(math.random(0, 360), math.random(0, 360), math.random(0, 360))
+							Hit_Part.BrickColor = BrickColor.new("Dark stone grey")
+							local Weld = Instance.new("Weld")
+							Weld.Parent = Hit_Part
+							local C0 = Hit.CFrame:toObjectSpace(Hit_Part.CFrame)
+							Weld.Part1 = Hit_Part
+							Weld.Part0 = Hit
+							Weld.C0 = C0
+							Hit_Part.Anchored = false
+						end
+					end
+					if Hit.Anchored == false then
+						local VelAng = (CFrame.new(Character.Head.CFrame.p,Hit.Position)).lookVector 
+						HitNotAnchoredRF:FireServer(Hit,VelAng)
+					end
+				end
+			end
+			ShootRF:FireServer(BulletSpawn.CFrame.p,Pos,nil,nil,nil,nil,BulletSpawn)
+			--Recoil
+			Camera.CoordinateFrame = CFrame.new(Camera.Focus.p) * (Camera.CoordinateFrame - Camera.CoordinateFrame.p) * CFrame.Angles(math.abs(math.rad(Settings.Recoil)), 0, 0) * CFrame.new(0, 0, (Camera.Focus.p - Camera.CoordinateFrame.p).magnitude)
+			--Shell Spawn
+			ShellSS = Instance.new("Part")
+			ShellSS.Parent = Ignore_Model
+			ShellSS.CanCollide = false
+			ShellSS.Position = ShellDrop.CFrame.p
+			ShellSS.Size = Vector3.new(0.1, 0.1, 0.2)
+			ShellSS.Anchored = false
+			ShellSS.BrickColor = BrickColor.new(100/255,100/255,35/255)
+			Debris:AddItem(ShellSS, 1.5)
+			--Shell CFrame
+			ShellSS.CFrame = ShellDrop.CFrame
+			--Creating shell velocity
+			local Sv = Instance.new("BodyVelocity") --Creating shell velocity
+			Sv.Parent = ShellSS
+			Sv.maxForce = SvMaxForce --Max shell ejection force
+			Sv.velocity = ShellSS.CFrame.lookVector*15 --Shell ejection speed
+			ShellSS.CanCollide = true
+			Sv:Destroy()
+			Debris:AddItem(Sv,0.2)
+			Ammo = Ammo - 1
+			AmmoVal.Value = Ammo
+			wait(60/Settings.RPM)
+			Enabled = true
+		end
+	end
+end
+
+do
+	local shtr
+	Gun.Activated:connect(function()
+	if ShootingMode == "Snigle" then --One Bullet
+		shoot()
+	elseif tonumber(ShootingMode) then
+		shtr = coroutine.create(shootRapid)
+		coroutine.resume(shtr)
+		repeat wait() until coroutine.status(shtr) == "dead"
+	elseif ShootingMode == "Auto" then
+		OnFire = true
+		while OnFire do
+			if not shtr then
+				shtr = coroutine.create(shootRapid)
+				coroutine.resume(shtr)
+			elseif coroutine.status(shtr) == "dead" then
+				shtr = coroutine.create(shootRapid)
+				coroutine.resume(shtr)
+			end
+			wait()
+		end
+	end
+	end)
+	
+	Gun.Deactivated:connect(function()
+		OnFire = false
+	end)
+end
+
+--Head and arm rotation
+Camera.Changed:connect(function()
+	if (Camera.Focus.p - Camera.CoordinateFrame.p).magnitude < 1 and Equipped then
+		Mouse.TargetFilter = workspace
+		Neck.C1 = CFrame.new()
+		Neck.C0 = CFrame.new(0, 1.5,0) * CFrame.Angles(math.asin((Mouse.Hit.p - Mouse.Origin.p).unit.y), 0, 0)
+		SetNeckRE:FireServer(Vector3.new(math.asin((Mouse.Hit.p - Mouse.Origin.p).unit.y), 0, 0))
+	end
+end)
+Mouse.Idle:connect(function()
+	if (Camera.Focus.p - Camera.CoordinateFrame.p).magnitude < 1 and Equipped then
+		Mouse.TargetFilter = workspace
+		Neck.C1 = CFrame.new()
+		Neck.C0 = CFrame.new(0, 1.5, 0) * CFrame.Angles(math.asin((Mouse.Hit.p - Mouse.Origin.p).unit.y), 0, 0)
+	end
+end)
+
+if Settings.AimingEnabled then
+Mouse.Button2Down:connect(function()
+	if not ReloadingAnimation and not isSprinting and Equipped and not Aiming and (Camera.Focus.p - Camera.CoordinateFrame.p).magnitude < 1 then
+		Aiming = true
+		Right_Weld.C1 = CFrame.new()
+		Right_Weld.C0 = CFrame.new()
+		if isR15 then
+			Right_Weld.C1 = Character.Head.CFrame:toObjectSpace(AimPart.CFrame)*Settings.R15AimOffset
+		else
+			Right_Weld.C1 = Character.Head.CFrame:toObjectSpace(AimPart.CFrame)
+		end
+		Left_Weld.C1 = LeftAimPos
+		Camera.FieldOfView = Settings.AimFOV
+		Gun.GripPos = Orig_Grip + AimGripOffset
+		Spread = Settings.Spread - Settings.SpreadReduction
+		FixedArm.Transparency = 0
+		Right_Arm.Transparency = 1
+		Fake_Arm_Right.Transparency = 1
+		UserInputService.MouseIconEnabled = false
+		AimRF:FireServer(true,AimPart,LeftAimPos,Orig_Grip + AimGripOffset)
+	end
+end)
+
+function stopAiming()
+	if Aiming then
+		FixedArm.Transparency = 1
+		Right_Arm.Transparency = 0
+		Fake_Arm_Right.Transparency = 0
+		Gun.GripPos = Orig_Grip
+		Right_Weld.C1 = Settings.RightPos
+		if isR15 then
+			Right_Weld.C0 = CFrame.new(0.55, -1.8, 0.5)
+			Left_Weld.C0 = CFrame.new(0.1, -1.8, 0)
+		else
+			Right_Weld.C0 = CFrame.new(0, -1.5, 0)
+			Left_Weld.C0 = CFrame.new(0, -1.5, 0)
+		end
+		Left_Weld.C1 = Settings.LeftPos
+		Camera.FieldOfView = CurrentFov
+		Neck.C0 = CFrame.new(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+		Neck.C1 = CFrame.new(0, -0.5, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+		UserInputService.MouseIconEnabled = true
+		wait(0.25)
+		Aiming = false
+		Spread = Settings.Spread
+		AimRF:FireServer(false,AimPart,LeftAimPos,Orig_Grip,Settings.RightPos,Settings.LeftPos)
+	end
+end
+
+Mouse.Button2Up:connect(stopAiming)
+end
+
+function ReloadAnim()
+	stopAiming()
+	ReloadingAnimation = true
+	ReloadingAnimRF:FireServer(Gun,Settings.RightPos)
+	--Parts
+	local MagDrop = Gun.MagDrop
+	--Magazine
+	local Magaz
+	local MagazAnim
+	local BackupC1 = Left_Weld.C1
+	local BackupC0 = Left_Weld.C0
+	local C1 = CFrame.new((Left_Weld.Part0.CFrame*CFrame.new(-1,-1,-1)).p,MagDrop.Position)*CFrame.Angles(math.pi/2,0,0)
+	
+	for i=1,4 do
+		wait(0.05)
+		Right_Weld.C1 = Right_Weld.C1*CFrame.new(0.1,-0.2,0.1)*CFrame.Angles(0,0,math.rad(10))
+	end
+	wait(0.1)
+	Magaz = MagDrop.Magazine:Clone()
+	Magaz:BreakJoints()
+	Magaz.Parent = workspace
+	Magaz.Position = MagDrop.Position
+	Magaz.Rotation = MagDrop.Rotation
+	Magaz.Anchored = false
+	Magaz.Transparency = 0
+	Magaz.CanCollide = true
+	Debris:AddItem(Magaz,1)
+	MagDrop.Magazine.Transparency = 1
+	wait(0.2)
+	MagazAnim = MagDrop.Magazine:Clone()
+	MagazAnim.Parent = Ignore_Model
+	MagazAnim.Anchored = false
+	MagazAnim.Transparency = 0
+	MagazAnim.CanCollide = false
+	local MagAnimWeld = Instance.new("Weld")
+	MagAnimWeld.Parent = MagazAnim
+	MagAnimWeld.Part1 = MagazAnim
+	MagAnimWeld.Part0 = Left_Arm
+	MagAnimWeld.C0 = CFrame.new(-0.1,-1,-0.5)*CFrame.Angles(math.rad(-90),0,0)
+	local function updateEulerAngles()
+		local C1 = CFrame.new((Left_Weld.Part0.CFrame*CFrame.new(-1,-1,-1)).p,MagDrop.Position)*CFrame.Angles(math.pi/2,0,0)
+		Left_Weld.C0 = CFrame.new()
+		Left_Weld.C1 = C1:inverse()*Left_Weld.Part0.CFrame
+		return Left_Weld.C1:toEulerAnglesXYZ()
+	end
+	local framerate = 20
+	for i=0.25*framerate,framerate,1 do
+		local X,Y,Z = updateEulerAngles()
+		Left_Weld.C1 = CFrame.new(1.5, 2-((0.1/20*10)*i), -1.1)*CFrame.fromEulerAnglesXYZ(X/framerate*(i-0.025*framerate),Y/framerate*(i-0.025*framerate),Z/framerate*(i-0.025*framerate))
+		wait(1/framerate)
+	end
+	wait(0.2)
+	if not Settings.InvisibleMagazinePart then
+		MagDrop.Magazine.Transparency = 0
+	end
+	MagazAnim:Destroy()
+	for i=1,8 do
+		Right_Weld.C1 = Right_Weld.C1*CFrame.new(-0.1,0.2,-0.1)*CFrame.Angles(0,0,math.rad(-10))
+	end
+	wait(0.1)
+	Left_Weld.C0 = BackupC0	
+	Left_Weld.C1 = CFrame.new(-0.25, 0.75, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.3, 0.8, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.35, 1, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.4, 1.5, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.45, 2, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.1)
+	Left_Weld.C1 = CFrame.new(-0.4, 1.5, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.35, 1, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.3, 0.8, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.25, 0.75, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.2, 0.7, 1) * CFrame.fromEulerAnglesXYZ(math.rad(310), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.2, 0.6, 1) * CFrame.fromEulerAnglesXYZ(math.rad(305), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.2, 0.45, 1) * CFrame.fromEulerAnglesXYZ(math.rad(300), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.3, 0.4, 1) * CFrame.fromEulerAnglesXYZ(math.rad(300), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.4, 0.4, 1) * CFrame.fromEulerAnglesXYZ(math.rad(300), 0.1, math.rad(-90))
+	wait(0.025)
+	Left_Weld.C1 = CFrame.new(-0.5, 0.4, 1) * CFrame.fromEulerAnglesXYZ(math.rad(305), 0.1, math.rad(-90))
+	wait(0.05)
+	Left_Weld.C1 = CFrame.new(-0.6, 0.2, 1) * CFrame.fromEulerAnglesXYZ(math.rad(305), 0.1, math.rad(-90))
+	wait(0.05)
+	Left_Weld.C1 = CFrame.new(-0.4, 0, 1) * CFrame.fromEulerAnglesXYZ(math.rad(305), 0.1, math.rad(-90))
+	wait(0.1)
+	Left_Weld.C1 = CFrame.new(1, 0.5, 0.5) * CFrame.Angles(math.rad(-90), math.rad(45), 0)
+	wait(0.05)
+	
+	Left_Weld.C1 = BackupC1
+	Left_Weld.C0 = BackupC0
+	Right_Weld.C1 = CFrame.new(-0.75, 1, 0.5)*CFrame.Angles(math.rad(-90), 0, 0)
+	ReloadingAnimation = false
+end
+
+Gun.Equipped:connect(function()
+	DetectOwner()
+	if not Character then
+		Character = Owner.Character
+		if Character then table.insert(Ray_Ignore,Character) end
+	end
+	Enabled = true
+	Equipped = true
+	
+	if Settings.FakeArms then
+		if not Ignore_Model:FindFirstChild("FixedArmModel") then
+			Left_Weld,Right_Weld,FixedArm,FixedArmWeld,FixedArmModel = WPS.FakeArms:InvokeServer(Settings.LeftPos,Settings.RightPos)
+		end
+		if not Fake_Arm_Right then
+			Fake_Arm_Right, Fake_Arm_Left = Right_Arm:Clone(), Left_Arm:Clone()
+			Fake_Arm_Right.Size, Fake_Arm_Left.Size = Vector3.new(0.9,1.8,0.9), Vector3.new(0.9,1.8,0.9)
+			local fakeArms = {Fake_Arm_Right, Fake_Arm_Left}
+			if isR15 then
+				Fake_Lower_Arm_Right,Fake_Lower_Arm_Left = Character:FindFirstChild("RightLowerArm"):Clone(),Character:FindFirstChild("LeftLowerArm"):Clone()
+				Fake_Lower_Arm_Right.Size, Fake_Lower_Arm_Left.Size = Vector3.new(0.9,1.8,0.9), Vector3.new(0.9,1.8,0.9)
+				table.insert(fakeArms,Fake_Lower_Arm_Right)
+				table.insert(fakeArms,Fake_Lower_Arm_Left)
+			end
+			Fake_Arm_Model = Instance.new("Model", Camera)
+			Fake_Arm_Model.Name = "FakeArms"
+			for i,v in pairs(fakeArms) do
+				local w = Instance.new("Weld", v)
+				w.Part0 = Character[v.Name]
+				w.Part1 = v
+				v.Transparency = Settings.FakeArmTransparency
+				v.Parent = Fake_Arm_Model
+			end
+			if Settings.CharacterMeshes then
+				for i,v in pairs(Character:GetChildren()) do
+					if v:IsA("CharacterMesh") and v.BodyPart == Enum.BodyPart.LeftArm or v:IsA("CharacterMesh") and v.BodyPart == Enum.BodyPart.RightArm then
+						v:Clone().Parent = Fake_Arm_Model
+					end
+				end
+			end
+			if Character:FindFirstChild("Shirt") then
+				local Humanoid = Instance.new("Humanoid")
+				Humanoid.Parent = Fake_Arm_Model
+				Humanoid.RigType = Character.Humanoid.RigType
+				Character.Shirt:Clone().Parent = Fake_Arm_Model
+			end
+		end
+	end
+	
+	if Mouse then
+		if Settings.CstCursourEnabled then
+			Mouse.Icon = Settings.CstCursour
+		end
+	end
+	
+	Character.Humanoid.WalkSpeed = Character.Humanoid.WalkSpeed + Settings.WalkSpeedModifier
+	
+	--Controls
+	ReloadInputConnection = UserInputService.InputBegan:connect(function(input)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.R then
+				if Enabled and not isSprinting then
+					--If stored ammo >= Maximum ammo - ammo
+					if Ammo < Settings.MaxAmmo then
+						if StoredAmmo > 0 and StoredAmmo >= Settings.MaxAmmo - Ammo then
+							Enabled = false
+							ReloadAnim()
+							StoredAmmo = StoredAmmo - (Settings.MaxAmmo - Ammo)
+							Ammo = Settings.MaxAmmo
+							StoredAmmoVal.Value = StoredAmmo
+							AmmoVal.Value = Ammo
+							Enabled = true
+						end
+					end
+					
+					--if stored ammo < Maximum ammo - ammo
+					if Ammo < Settings.MaxAmmo then
+						if StoredAmmo > 0 and StoredAmmo < Settings.MaxAmmo - Ammo then
+							Enabled = false
+							ReloadAnim()
+							Ammo = Ammo + StoredAmmo
+							StoredAmmo = 0
+							StoredAmmoVal.Value = StoredAmmo
+							AmmoVal.Value = Ammo
+							Enabled = true
+						end
+					end
+				end
+			end
+		end
+	end)
+	
+	SprintControlConnection = UserInputService.InputBegan:connect(function(input)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.LeftShift then
+				if Equipped then
+					while UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) do
+						if Enabled and not isSprinting then
+							isSprinting = true
+							stopAiming()
+							SprintRE:FireServer(true,16+Settings.WalkSpeedModifier+Settings.SprintSpeedModifier,Settings.SprintAnimationType)
+							if Settings.SprintAnimationType == "Light" then
+								Right_Weld.C1 = CFrame.new(-0.75, 1, 0.15)*CFrame.Angles(math.rad(-125), math.rad(5), 0)
+								Left_Weld.C1 = CFrame.new(1.25, 0.5, 0.35)*CFrame.Angles(math.rad(-125), math.rad(65), 0)
+							else
+								Right_Weld.C1 = CFrame.new(-1.45, -0.25, 0.4)*CFrame.Angles(math.rad(-88), math.rad(-55), math.rad(-5))
+								Left_Weld.C1 = CFrame.new(1.5, 0, 0.325)*CFrame.Angles(math.rad(-81), math.rad(50), math.rad(-45))
+							end
+						end
+						wait(0.05)
+					end
+					SprintRE:FireServer(false,16+Settings.WalkSpeedModifier,nil,Settings.RightPos,Settings.LeftPos)
+					Right_Weld.C1 = Settings.RightPos
+					Left_Weld.C1 = Settings.LeftPos
+					isSprinting = false
+				end
+			end
+		end
+	end)
+		
+	local Modes = {unpack(Settings.MultiShotFireModes)}
+	if Settings.SnigleShotAble then
+		table.insert(Modes,1,"Snigle")
+	end
+	if Settings.AutoFireAble then
+		table.insert(Modes,1,"Auto")
+	end
+	ChangeFireModeConnection = UserInputService.InputBegan:connect(function(input)
+		if input.UserInputType == Enum.UserInputType.Keyboard then
+			if input.KeyCode == Enum.KeyCode.V then
+				for i,v in pairs(Modes) do
+					if ShootingMode == v then
+						if i < #Modes then
+							ShootingMode = Modes[i+1]
+						else
+							ShootingMode = Modes[1]
+						end
+						print("Shooting Mode:"..ShootingMode)
+						ShootingModeVal.Value = tostring(ShootingMode)
+						break
+					end
+				end
+			end
+		end
+	end)
+	
+	if isR15 then
+		Owner.PlayerGui:FindFirstChild("AnimationProxy").OverrideAnimations:Fire()
+	end
+end)
+
+Gun.Unequipped:connect(function()
+	Enabled = false
+	Equipped = false
+	if Settings.FakeArms then
+		WPS.FakeArmsRemove:InvokeServer()
+	end
+	if Fake_Arm_Right and Fake_Arm_Left and Fake_Arm_Model then
+		Fake_Arm_Model:Destroy()
+		Fake_Arm_Right = nil
+	end
+	if Mouse then
+		if Settings.CstCursourEnabled then
+			Mouse.Icon = InitialCursour
+		end
+	end
+	Character.Humanoid.WalkSpeed = Character.Humanoid.WalkSpeed - Settings.WalkSpeedModifier
+	Neck.C0 = CFrame.new(0, 1, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+	Neck.C1 = CFrame.new(0, -0.5, 0, -1, -0, -0, 0, 0, 1, 0, 1, 0)
+	ReloadInputConnection:disconnect()
+	SprintControlConnection:disconnect()
+	ChangeFireModeConnection:disconnect()
+	Ray_Ignore[Char_Ignore_Pos] = nil
+	--[[
+	--#FIXME Currently an attempt to recover idle animations back causes bugs.
+	if isR15 then
+		Owner.PlayerGui:FindFirstChild("AnimationProxy").RecoverAnimations:Fire()
+	end
+	]]
+end)
+
+print("Gun script loaded. Gun enabled:"..tostring(Enabled))
+end))
+Script13.Name = "Welding"
+Script13.Parent = LocalScript12
+table.insert(cors,sandbox(Script13,function()
+function Weld(x,y)
+	local W = Instance.new("Weld")
+	W.Part0 = x
+	W.Part1 = y
+	local CJ = CFrame.new(x.Position)
+	local C0 = x.CFrame:inverse()*CJ
+	local C1 = y.CFrame:inverse()*CJ
+	W.C0 = C0
+	W.C1 = C1
+	W.Parent = x
+end
+
+function Get(A)
+	if A.className == "Part" or A.className == "UnionOperation" or A.className == "WedgePart" then
+		Weld(script.Parent.Parent.Handle, A)
+		A.Anchored = false
+	end
+	local C = A:GetChildren()
+	for i=1, #C do
+	Get(C[i])
+	end
+end
+
+function Finale()
+	Get(script.Parent.Parent)
+end
+
+script.Parent.Parent.Equipped:connect(Finale)
+script.Parent.Parent.Unequipped:connect(Finale)
+Finale()
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = workspace
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+wait(0.25)
+game.Workspace["TheArturZh's Gun Script v.4.3.1.1"]["New Weapon"].Handle.Position = game.Workspace.spumato.Torso.Position
