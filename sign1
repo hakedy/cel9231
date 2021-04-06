@@ -1,0 +1,73 @@
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+Decal2 = Instance.new("Decal")
+Decal3 = Instance.new("Decal")
+Part4 = Instance.new("Part")
+Weld5 = Instance.new("Weld")
+Tool0.Name = "PLS SHUT UP"
+Tool0.Parent = mas
+Part1.Name = "Sign"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(-0.491169006, 49.9351311, 42.0374336, 1, 0, -0, 0, 0, 1, 0, -1, 0)
+Part1.Orientation = Vector3.new(-90, 0, 0)
+Part1.Position = Vector3.new(-0.491169006, 49.9351311, 42.0374336)
+Part1.Rotation = Vector3.new(-90, 0, 0)
+Part1.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part1.Size = Vector3.new(45.1468048, 8.2085104, 28.729784)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Institutional white")
+Part1.FrontSurface = Enum.SurfaceType.Weld
+Part1.Material = Enum.Material.SmoothPlastic
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Institutional white")
+Decal2.Parent = Part1
+Decal2.Texture = "rbxassetid://4828900381"
+Decal2.Face = Enum.NormalId.Bottom
+Decal3.Parent = Part1
+Decal3.Texture = "rbxassetid://4828900381"
+Decal3.Face = Enum.NormalId.Top
+Part4.Name = "Handle"
+Part4.Parent = Tool0
+Part4.CFrame = CFrame.new(-0.491169006, 17.7851295, 42.0373306, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part4.Position = Vector3.new(-0.491169006, 17.7851295, 42.0373306)
+Part4.Color = Color3.new(0.972549, 0.972549, 0.972549)
+Part4.Size = Vector3.new(9.57659531, 35.5702095, 8.2085104)
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.BrickColor = BrickColor.new("Institutional white")
+Part4.Material = Enum.Material.SmoothPlastic
+Part4.TopSurface = Enum.SurfaceType.Weld
+Part4.brickColor = BrickColor.new("Institutional white")
+Weld5.Parent = Part4
+Weld5.C0 = CFrame.new(0, 17.7851067, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Weld5.C1 = CFrame.new(0, 0.000104376595, -14.3648939, -1, 0, 0, 0, -1, 0, 0, 0, 1)
+Weld5.Part0 = Part4
+Weld5.Part1 = Part1
+Weld5.part1 = Part1
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = workspace
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
