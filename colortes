@@ -1,0 +1,6 @@
+while true do
+wait(1)
+local a = game.Workspace:GetChildren()
+a.Color = Random
+print(a.Color)
+end
