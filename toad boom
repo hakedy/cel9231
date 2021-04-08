@@ -1,0 +1,20 @@
+local a = Instance.new("Explosion",workspace)
+a.BlastPressure = 999999999999999
+a.BlastRadius = 100
+local b = Instance.new("Sound",workspace)
+b.SoundId = "rbxassetid://1836797203"
+b.Volume = 10
+b.Playing = true
+b.Looped = false
+local c = Instance.new("Part",workspace)
+local d = Instance.new("SpecialMesh",workspace)
+d.Parent = c
+d.Scale = Vector3.new(0.1, 0.1, 0.1)
+d.MeshType = "FileMesh"
+d.MeshId = "rbxassetid://430210147"
+d.TextureId = "rbxassetid://430210159"
+c.Anchored = true
+c.Position = Vector3.new(0, 35.167, 0)
+wait(5)
+b:Destroy()
+c:Destroy()
