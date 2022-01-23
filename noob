@@ -1,0 +1,1825 @@
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Sound3 = Instance.new("Sound")
+LocalScript4 = Instance.new("LocalScript")
+Script5 = Instance.new("Script")
+Model6 = Instance.new("Model")
+Part7 = Instance.new("Part")
+Motor6D8 = Instance.new("Motor6D")
+BodyForce9 = Instance.new("BodyForce")
+Part10 = Instance.new("Part")
+Motor6D11 = Instance.new("Motor6D")
+Motor6D12 = Instance.new("Motor6D")
+Motor6D13 = Instance.new("Motor6D")
+Motor6D14 = Instance.new("Motor6D")
+Motor6D15 = Instance.new("Motor6D")
+SpecialMesh16 = Instance.new("SpecialMesh")
+Folder17 = Instance.new("Folder")
+Sound18 = Instance.new("Sound")
+Sound19 = Instance.new("Sound")
+Sound20 = Instance.new("Sound")
+Sound21 = Instance.new("Sound")
+Sound22 = Instance.new("Sound")
+Part23 = Instance.new("Part")
+Part24 = Instance.new("Part")
+Part25 = Instance.new("Part")
+Part26 = Instance.new("Part")
+Part27 = Instance.new("Part")
+SpecialMesh28 = Instance.new("SpecialMesh")
+Humanoid29 = Instance.new("Humanoid")
+Script30 = Instance.new("Script")
+StringValue31 = Instance.new("StringValue")
+Animation32 = Instance.new("Animation")
+StringValue33 = Instance.new("StringValue")
+Animation34 = Instance.new("Animation")
+StringValue35 = Instance.new("StringValue")
+Animation36 = Instance.new("Animation")
+NumberValue37 = Instance.new("NumberValue")
+Animation38 = Instance.new("Animation")
+NumberValue39 = Instance.new("NumberValue")
+StringValue40 = Instance.new("StringValue")
+Animation41 = Instance.new("Animation")
+StringValue42 = Instance.new("StringValue")
+Animation43 = Instance.new("Animation")
+StringValue44 = Instance.new("StringValue")
+Animation45 = Instance.new("Animation")
+StringValue46 = Instance.new("StringValue")
+Animation47 = Instance.new("Animation")
+Script48 = Instance.new("Script")
+BillboardGui49 = Instance.new("BillboardGui")
+TextLabel50 = Instance.new("TextLabel")
+Configuration51 = Instance.new("Configuration")
+ModuleScript52 = Instance.new("ModuleScript")
+ModuleScript53 = Instance.new("ModuleScript")
+ModuleScript54 = Instance.new("ModuleScript")
+ModuleScript55 = Instance.new("ModuleScript")
+ModuleScript56 = Instance.new("ModuleScript")
+ModuleScript57 = Instance.new("ModuleScript")
+Configuration58 = Instance.new("Configuration")
+IntValue59 = Instance.new("IntValue")
+BoolValue60 = Instance.new("BoolValue")
+IntValue61 = Instance.new("IntValue")
+IntValue62 = Instance.new("IntValue")
+Configuration63 = Instance.new("Configuration")
+Animation64 = Instance.new("Animation")
+Animation65 = Instance.new("Animation")
+CharacterMesh66 = Instance.new("CharacterMesh")
+CharacterMesh67 = Instance.new("CharacterMesh")
+CharacterMesh68 = Instance.new("CharacterMesh")
+CharacterMesh69 = Instance.new("CharacterMesh")
+CharacterMesh70 = Instance.new("CharacterMesh")
+Script71 = Instance.new("Script")
+BodyColors72 = Instance.new("BodyColors")
+Script73 = Instance.new("Script")
+Tool0.Name = "NoobTube"
+Tool0.Parent = mas
+Tool0.TextureId = "http://www.roblox.com/asset/?id=27469657"
+Tool0.Grip = CFrame.new(0, -0.699999988, -0.699999988, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Tool0.GripForward = Vector3.new(-0, -0, 1)
+Tool0.GripPos = Vector3.new(0, -0.699999988079071, -0.699999988079071)
+Tool0.GripRight = Vector3.new(-1, 0, 0)
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(8.18272591, 3.44567251, 0.89706707, -8.94069672e-08, -0.00908773672, 0.999958754, -0.0508622602, 0.998664379, 0.00907597132, -0.998705566, -0.0508601516, -0.00046235323)
+Part1.Orientation = Vector3.new(-0.5199999809265137, 90.02999877929688, -2.9200000762939453)
+Part1.Position = Vector3.new(8.18272590637207, 3.4456725120544434, 0.8970670700073242)
+Part1.Rotation = Vector3.new(-92.91999816894531, 89.4800033569336, 90)
+Part1.Color = Color3.new(0.294118, 0.592157, 0.294118)
+Part1.Size = Vector3.new(1, 1.2000000476837158, 4)
+Part1.BrickColor = BrickColor.new("Bright green")
+Part1.Locked = true
+Part1.brickColor = BrickColor.new("Bright green")
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=27469702"
+SpecialMesh2.TextureId = "http://www.roblox.com/asset/?id=27469682"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+Sound3.Name = "NoobShoot"
+Sound3.Parent = Part1
+Sound3.SoundId = "rbxassetid://174915286"
+Sound3.Volume = 1
+LocalScript4.Name = "MouseIcon"
+LocalScript4.Parent = Tool0
+table.insert(cors,sandbox(LocalScript4,function()
+--Made by Luckymaxer
+
+Mouse_Icon = "http://www.roblox.com/asset/?id=27404887"
+Reloading_Icon = "http://www.roblox.com/asset/?id=27398778"
+
+Tool = script.Parent
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:connect(OnEquipped)
+Tool.Changed:connect(OnChanged)
+end))
+Script5.Name = "Activate"
+Script5.Parent = Tool0
+table.insert(cors,sandbox(Script5,function()
+script.Parent.Activated:connect(function()
+	local plr = script.Parent.Parent
+	script.Parent.Handle.NoobShoot:Play()
+	local Minion = game:GetService("ReplicatedStorage"):WaitForChild("Min"):Clone()
+	Minion.Parent = workspace
+	Minion.HumanoidRootPart.CFrame = plr.HumanoidRootPart.CFrame * CFrame.new(0,0,-12)
+end)
+end))
+Model6.Name = "Min"
+Model6.Parent = Tool0
+Part7.Name = "HumanoidRootPart"
+Part7.Parent = Model6
+Part7.CFrame = CFrame.new(7.76831388, 3.00001001, 7.85303497, -1, -2.12045811e-27, 0, -2.12045811e-27, 1, -1.51463335e-27, 0, -1.51463335e-27, -1)
+Part7.Orientation = Vector3.new(0, 180, 0)
+Part7.Position = Vector3.new(7.768313884735107, 3.0000100135803223, 7.853034973144531)
+Part7.Rotation = Vector3.new(180, 0, 180)
+Part7.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part7.Transparency = 1
+Part7.Size = Vector3.new(2, 2, 1)
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.BrickColor = BrickColor.new("Earth green")
+Part7.Material = Enum.Material.WoodPlanks
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.brickColor = BrickColor.new("Earth green")
+Part7.FormFactor = Enum.FormFactor.Symmetric
+Part7.formFactor = Enum.FormFactor.Symmetric
+Motor6D8.Name = "Root Hip"
+Motor6D8.Parent = Part7
+Motor6D8.MaxVelocity = 0.10000000149011612
+Motor6D8.C0 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D8.C1 = CFrame.new(0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D8.Part0 = Part7
+Motor6D8.Part1 = Part10
+Motor6D8.part1 = Part10
+BodyForce9.Name = "RepulsionForce"
+BodyForce9.Parent = Part7
+BodyForce9.Force = Vector3.new(0, 0, 0)
+BodyForce9.force = Vector3.new(0, 0, 0)
+Part10.Name = "Torso"
+Part10.Parent = Model6
+Part10.CFrame = CFrame.new(7.76831388, 3.00001001, 7.85303497, -1, -2.12045811e-27, 0, -2.12045811e-27, 1, -1.51463335e-27, 0, -1.51463335e-27, -1)
+Part10.Orientation = Vector3.new(0, 180, 0)
+Part10.Position = Vector3.new(7.768313884735107, 3.0000100135803223, 7.853034973144531)
+Part10.Rotation = Vector3.new(180, 0, 180)
+Part10.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part10.Size = Vector3.new(2, 2, 1)
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.BrickColor = BrickColor.new("Earth green")
+Part10.Material = Enum.Material.WoodPlanks
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.brickColor = BrickColor.new("Earth green")
+Part10.FormFactor = Enum.FormFactor.Symmetric
+Part10.formFactor = Enum.FormFactor.Symmetric
+Motor6D11.Name = "Right Shoulder"
+Motor6D11.Parent = Part10
+Motor6D11.MaxVelocity = 0.10000000149011612
+Motor6D11.C0 = CFrame.new(1, 0.5, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D11.C1 = CFrame.new(-0.5, 0.5, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D11.Part0 = Part10
+Motor6D11.Part1 = Part26
+Motor6D11.part1 = Part26
+Motor6D12.Name = "Right Hip"
+Motor6D12.Parent = Part10
+Motor6D12.MaxVelocity = 0.10000000149011612
+Motor6D12.C0 = CFrame.new(1, -1, 0, -4.37113883e-08, 0, 1, -0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D12.C1 = CFrame.new(0.5, 1, 0, -4.37113883e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.37113883e-08)
+Motor6D12.Part0 = Part10
+Motor6D12.Part1 = Part24
+Motor6D12.part1 = Part24
+Motor6D13.Name = "Neck"
+Motor6D13.Parent = Part10
+Motor6D13.MaxVelocity = 0.10000000149011612
+Motor6D13.C0 = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D13.C1 = CFrame.new(0, -0.5, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+Motor6D13.Part0 = Part10
+Motor6D13.Part1 = Part27
+Motor6D13.part1 = Part27
+Motor6D14.Name = "Left Shoulder"
+Motor6D14.Parent = Part10
+Motor6D14.MaxVelocity = 0.10000000149011612
+Motor6D14.C0 = CFrame.new(-1, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D14.C1 = CFrame.new(0.5, 0.5, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D14.Part0 = Part10
+Motor6D14.Part1 = Part25
+Motor6D14.part1 = Part25
+Motor6D15.Name = "Left Hip"
+Motor6D15.Parent = Part10
+Motor6D15.MaxVelocity = 0.10000000149011612
+Motor6D15.C0 = CFrame.new(-1, -1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D15.C1 = CFrame.new(-0.5, 1, 0, -4.37113883e-08, 0, -1, 0, 0.99999994, 0, 1, 0, -4.37113883e-08)
+Motor6D15.Part0 = Part10
+Motor6D15.Part1 = Part23
+Motor6D15.part1 = Part23
+SpecialMesh16.Parent = Part10
+SpecialMesh16.MeshId = "http://www.roblox.com/asset/?id=119447056"
+SpecialMesh16.Offset = Vector3.new(0, -0.4000000059604645, 0)
+SpecialMesh16.Scale = Vector3.new(2, 2, 2)
+SpecialMesh16.TextureId = "http://www.roblox.com/asset/?id=119444340"
+SpecialMesh16.MeshType = Enum.MeshType.FileMesh
+Folder17.Name = "Sounds"
+Folder17.Parent = Part10
+Sound18.Name = "Ha"
+Sound18.Parent = Folder17
+Sound18.SoundId = "rbxassetid://154157543"
+Sound18.Volume = 1
+Sound19.Name = "Hi"
+Sound19.Parent = Folder17
+Sound19.SoundId = "rbxassetid://154147007"
+Sound19.Volume = 1
+Sound20.Name = "Muh"
+Sound20.Parent = Folder17
+Sound20.SoundId = "rbxassetid://1601659619"
+Sound20.Volume = 1
+Sound21.Name = "Gr"
+Sound21.Parent = Folder17
+Sound21.SoundId = "rbxassetid://154157312"
+Sound21.Volume = 1
+Sound22.Name = "Bye"
+Sound22.Parent = Folder17
+Sound22.SoundId = "rbxassetid://154157386"
+Sound22.Volume = 1
+Part23.Name = "Left Leg"
+Part23.Parent = Model6
+Part23.CFrame = CFrame.new(8.26831436, 1.00001013, 7.85303497, -1, -2.12045792e-27, 0, -2.12045811e-27, 0.999999881, -1.51463335e-27, 0, -1.51463316e-27, -1)
+Part23.Orientation = Vector3.new(0, 180, 0)
+Part23.Position = Vector3.new(8.268314361572266, 1.0000101327896118, 7.853034973144531)
+Part23.Rotation = Vector3.new(180, 0, 180)
+Part23.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part23.Transparency = 1
+Part23.Size = Vector3.new(1, 2, 1)
+Part23.BottomSurface = Enum.SurfaceType.Smooth
+Part23.BrickColor = BrickColor.new("Earth green")
+Part23.CanCollide = false
+Part23.Material = Enum.Material.WoodPlanks
+Part23.TopSurface = Enum.SurfaceType.Smooth
+Part23.brickColor = BrickColor.new("Earth green")
+Part23.FormFactor = Enum.FormFactor.Symmetric
+Part23.formFactor = Enum.FormFactor.Symmetric
+Part24.Name = "Right Leg"
+Part24.Parent = Model6
+Part24.CFrame = CFrame.new(7.26831388, 1.00001013, 7.85303497, -1, -2.12045792e-27, 0, -2.12045811e-27, 0.999999881, -1.51463335e-27, 0, -1.51463316e-27, -1)
+Part24.Orientation = Vector3.new(0, 180, 0)
+Part24.Position = Vector3.new(7.268313884735107, 1.0000101327896118, 7.853034973144531)
+Part24.Rotation = Vector3.new(180, 0, 180)
+Part24.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part24.Transparency = 1
+Part24.Size = Vector3.new(1, 2, 1)
+Part24.BottomSurface = Enum.SurfaceType.Smooth
+Part24.BrickColor = BrickColor.new("Earth green")
+Part24.CanCollide = false
+Part24.Material = Enum.Material.WoodPlanks
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.brickColor = BrickColor.new("Earth green")
+Part24.FormFactor = Enum.FormFactor.Symmetric
+Part24.formFactor = Enum.FormFactor.Symmetric
+Part25.Name = "Left Arm"
+Part25.Parent = Model6
+Part25.CFrame = CFrame.new(9.26831436, 3.00001001, 7.85303497, -1, -2.12045792e-27, 0, -2.12045811e-27, 0.999999881, -1.51463335e-27, 0, -1.51463316e-27, -1)
+Part25.Orientation = Vector3.new(0, 180, 0)
+Part25.Position = Vector3.new(9.268314361572266, 3.0000100135803223, 7.853034973144531)
+Part25.Rotation = Vector3.new(180, 0, 180)
+Part25.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part25.Transparency = 1
+Part25.Size = Vector3.new(1, 2, 1)
+Part25.BottomSurface = Enum.SurfaceType.Smooth
+Part25.BrickColor = BrickColor.new("Earth green")
+Part25.CanCollide = false
+Part25.Material = Enum.Material.WoodPlanks
+Part25.TopSurface = Enum.SurfaceType.Smooth
+Part25.brickColor = BrickColor.new("Earth green")
+Part25.FormFactor = Enum.FormFactor.Symmetric
+Part25.formFactor = Enum.FormFactor.Symmetric
+Part26.Name = "Right Arm"
+Part26.Parent = Model6
+Part26.CFrame = CFrame.new(6.26831388, 3.00001001, 7.85303497, -1, -2.12045792e-27, 0, -2.12045811e-27, 0.999999881, -1.51463335e-27, 0, -1.51463316e-27, -1)
+Part26.Orientation = Vector3.new(0, 180, 0)
+Part26.Position = Vector3.new(6.268313884735107, 3.0000100135803223, 7.853034973144531)
+Part26.Rotation = Vector3.new(180, 0, 180)
+Part26.Color = Color3.new(0.152941, 0.27451, 0.176471)
+Part26.Transparency = 1
+Part26.Size = Vector3.new(1, 2, 1)
+Part26.BottomSurface = Enum.SurfaceType.Smooth
+Part26.BrickColor = BrickColor.new("Earth green")
+Part26.CanCollide = false
+Part26.Material = Enum.Material.WoodPlanks
+Part26.TopSurface = Enum.SurfaceType.Smooth
+Part26.brickColor = BrickColor.new("Earth green")
+Part26.FormFactor = Enum.FormFactor.Symmetric
+Part26.formFactor = Enum.FormFactor.Symmetric
+Part27.Name = "Head"
+Part27.Parent = Model6
+Part27.CFrame = CFrame.new(7.76831388, 4.50001001, 7.85303497, -1, -2.12045811e-27, 0, -2.12045811e-27, 1, -1.51463335e-27, 0, -1.51463335e-27, -1)
+Part27.Orientation = Vector3.new(0, 180, 0)
+Part27.Position = Vector3.new(7.768313884735107, 4.500010013580322, 7.853034973144531)
+Part27.Rotation = Vector3.new(180, 0, 180)
+Part27.Color = Color3.new(0.227451, 0.490196, 0.0823529)
+Part27.Transparency = 1
+Part27.Size = Vector3.new(2, 1, 1)
+Part27.BottomSurface = Enum.SurfaceType.Smooth
+Part27.BrickColor = BrickColor.new("Camo")
+Part27.Material = Enum.Material.WoodPlanks
+Part27.TopSurface = Enum.SurfaceType.Smooth
+Part27.brickColor = BrickColor.new("Camo")
+Part27.FormFactor = Enum.FormFactor.Symmetric
+Part27.formFactor = Enum.FormFactor.Symmetric
+SpecialMesh28.Parent = Part27
+SpecialMesh28.Scale = Vector3.new(1.25, 1.25, 1.25)
+Humanoid29.Parent = Model6
+Humanoid29.Health = inf
+Humanoid29.LeftLeg = Part23
+Humanoid29.MaxHealth = inf
+Humanoid29.RightLeg = Part24
+Humanoid29.Torso = Part7
+Humanoid29.WalkSpeed = 100
+Humanoid29.maxHealth = inf
+Script30.Name = "Animate"
+Script30.Parent = Model6
+table.insert(cors,sandbox(Script30,function()
+function   waitForChild(parent, childName)
+	local child = parent:findFirstChild(childName)
+	if child then return child end
+	while true do
+		child = parent.ChildAdded:wait()
+		if child.Name==childName then return child end
+	end
+end
+
+local Figure = script.Parent
+local Torso = waitForChild(Figure, "Torso")
+local RightShoulder = waitForChild(Torso, "Right Shoulder")
+local LeftShoulder = waitForChild(Torso, "Left Shoulder")
+local RightHip = waitForChild(Torso, "Right Hip")
+local LeftHip = waitForChild(Torso, "Left Hip")
+local Neck = waitForChild(Torso, "Neck")
+local Humanoid = waitForChild(Figure, "Humanoid")
+local pose = "Standing"
+
+local currentAnim = ""
+local currentAnimTrack = nil
+local currentAnimKeyframeHandler = nil
+local currentAnimSpeed = 1.0
+local animTable = {}
+local animNames = { 
+	idle = 	{	
+				{ id = "http://www.roblox.com/asset/?id=125750544", weight = 9 },
+				{ id = "http://www.roblox.com/asset/?id=125750618", weight = 1 }
+			},
+	walk = 	{ 	
+				{ id = "http://www.roblox.com/asset/?id=125749145", weight = 10 } 
+			}, 
+	run = 	{
+				{ id = "run.xml", weight = 10 } 
+			}, 
+	jump = 	{
+				{ id = "http://www.roblox.com/asset/?id=125750702", weight = 10 } 
+			}, 
+	fall = 	{
+				{ id = "http://www.roblox.com/asset/?id=125750759", weight = 10 } 
+			}, 
+	climb = {
+				{ id = "http://www.roblox.com/asset/?id=125750800", weight = 10 } 
+			}, 
+	toolnone = {
+				{ id = "http://www.roblox.com/asset/?id=125750867", weight = 10 } 
+			},
+	toolslash = {
+				{ id = "http://www.roblox.com/asset/?id=129967390", weight = 10 } 
+--				{ id = "slash.xml", weight = 10 } 
+			},
+	toollunge = {
+				{ id = "http://www.roblox.com/asset/?id=129967478", weight = 10 } 
+			},
+	wave = {
+				{ id = "http://www.roblox.com/asset/?id=128777973", weight = 10 } 
+			},
+	point = {
+				{ id = "http://www.roblox.com/asset/?id=128853357", weight = 10 } 
+			},
+	dance = {
+				{ id = "http://www.roblox.com/asset/?id=130018893", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=132546839", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=132546884", weight = 10 } 
+			},
+	dance2 = {
+				{ id = "http://www.roblox.com/asset/?id=160934142", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=160934298", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=160934376", weight = 10 } 
+			},
+	dance3 = {
+				{ id = "http://www.roblox.com/asset/?id=160934458", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=160934530", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=160934593", weight = 10 } 
+			},
+	laugh = {
+				{ id = "http://www.roblox.com/asset/?id=129423131", weight = 10 } 
+			},
+	cheer = {
+				{ id = "http://www.roblox.com/asset/?id=129423030", weight = 10 } 
+			},
+}
+
+-- Existance in this list signifies that it is an emote, the value indicates if it is a looping emote
+local emoteNames = { wave = false, point = false, dance = true, dance2 = true, dance3 = true, laugh = false, cheer = false}
+
+math.randomseed(tick())
+
+function configureAnimationSet(name, fileList)
+	if (animTable[name] ~= nil) then
+		for _, connection in pairs(animTable[name].connections) do
+			connection:disconnect()
+		end
+	end
+	animTable[name] = {}
+	animTable[name].count = 0
+	animTable[name].totalWeight = 0	
+	animTable[name].connections = {}
+
+	-- check for config values
+	local config = script:FindFirstChild(name)
+	if (config ~= nil) then
+--		print("Loading anims " .. name)
+		table.insert(animTable[name].connections, config.ChildAdded:connect(function(child) configureAnimationSet(name, fileList) end))
+		table.insert(animTable[name].connections, config.ChildRemoved:connect(function(child) configureAnimationSet(name, fileList) end))
+		local idx = 1
+		for _, childPart in pairs(config:GetChildren()) do
+			if (childPart:IsA("Animation")) then
+				table.insert(animTable[name].connections, childPart.Changed:connect(function(property) configureAnimationSet(name, fileList) end))
+				animTable[name][idx] = {}
+				animTable[name][idx].anim = childPart
+				local weightObject = childPart:FindFirstChild("Weight")
+				if (weightObject == nil) then
+					animTable[name][idx].weight = 1
+				else
+					animTable[name][idx].weight = weightObject.Value
+				end
+				animTable[name].count = animTable[name].count + 1
+				animTable[name].totalWeight = animTable[name].totalWeight + animTable[name][idx].weight
+	--			print(name .. " [" .. idx .. "] " .. animTable[name][idx].anim.AnimationId .. " (" .. animTable[name][idx].weight .. ")")
+				idx = idx + 1
+			end
+		end
+	end
+
+	-- fallback to defaults
+	if (animTable[name].count <= 0) then
+		for idx, anim in pairs(fileList) do
+			animTable[name][idx] = {}
+			animTable[name][idx].anim = Instance.new("Animation")
+			animTable[name][idx].anim.Name = name
+			animTable[name][idx].anim.AnimationId = anim.id
+			animTable[name][idx].weight = anim.weight
+			animTable[name].count = animTable[name].count + 1
+			animTable[name].totalWeight = animTable[name].totalWeight + anim.weight
+--			print(name .. " [" .. idx .. "] " .. anim.id .. " (" .. anim.weight .. ")")
+		end
+	end
+end
+
+-- Setup animation objects
+function scriptChildModified(child)
+	local fileList = animNames[child.Name]
+	if (fileList ~= nil) then
+		configureAnimationSet(child.Name, fileList)
+	end	
+end
+
+script.ChildAdded:connect(scriptChildModified)
+script.ChildRemoved:connect(scriptChildModified)
+
+
+for name, fileList in pairs(animNames) do 
+	configureAnimationSet(name, fileList)
+end	
+
+-- ANIMATION
+
+-- declarations
+local toolAnim = "None"
+local toolAnimTime = 0
+
+local jumpAnimTime = 0
+local jumpAnimDuration = 0.3
+
+local toolTransitionTime = 0.1
+local fallTransitionTime = 0.3
+local jumpMaxLimbVelocity = 0.75
+
+-- functions
+
+function stopAllAnimations()
+	local oldAnim = currentAnim
+
+	-- return to idle if finishing an emote
+	if (emoteNames[oldAnim] ~= nil and emoteNames[oldAnim] == false) then
+		oldAnim = "idle"
+	end
+
+	currentAnim = ""
+	if (currentAnimKeyframeHandler ~= nil) then
+		currentAnimKeyframeHandler:disconnect()
+	end
+
+	if (currentAnimTrack ~= nil) then
+		currentAnimTrack:Stop()
+		currentAnimTrack:Destroy()
+		currentAnimTrack = nil
+	end
+	return oldAnim
+end
+
+function setAnimationSpeed(speed)
+	if speed ~= currentAnimSpeed then
+		currentAnimSpeed = speed
+		currentAnimTrack:AdjustSpeed(currentAnimSpeed)
+	end
+end
+
+function keyFrameReachedFunc(frameName)
+	if (frameName == "End") then
+--		print("Keyframe : ".. frameName)
+		local repeatAnim = stopAllAnimations()
+		local animSpeed = currentAnimSpeed
+		playAnimation(repeatAnim, 0.0, Humanoid)
+		setAnimationSpeed(animSpeed)
+	end
+end
+
+-- Preload animations
+function playAnimation(animName, transitionTime, humanoid)
+	local idleFromEmote = (animName == "idle" and emoteNames[currentAnim] ~= nil)
+	if (animName ~= currentAnim and not idleFromEmote) then		 
+		
+		if (currentAnimTrack ~= nil) then
+			currentAnimTrack:Stop(transitionTime)
+			currentAnimTrack:Destroy()
+		end
+
+		currentAnimSpeed = 1.0
+		local roll = math.random(1, animTable[animName].totalWeight) 
+		local origRoll = roll
+		local idx = 1
+		while (roll > animTable[animName][idx].weight) do
+			roll = roll - animTable[animName][idx].weight
+			idx = idx + 1
+		end
+--		print(animName .. " " .. idx .. " [" .. origRoll .. "]")
+		local anim = animTable[animName][idx].anim
+
+		-- load it to the humanoid; get AnimationTrack
+		currentAnimTrack = humanoid:LoadAnimation(anim)
+		 
+		-- play the animation
+		currentAnimTrack:Play(transitionTime)
+		currentAnim = animName
+
+		-- set up keyframe name triggers
+		if (currentAnimKeyframeHandler ~= nil) then
+			currentAnimKeyframeHandler:disconnect()
+		end
+		currentAnimKeyframeHandler = currentAnimTrack.KeyframeReached:connect(keyFrameReachedFunc)
+	end
+end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+local toolAnimName = ""
+local toolAnimTrack = nil
+local currentToolAnimKeyframeHandler = nil
+
+function toolKeyFrameReachedFunc(frameName)
+	if (frameName == "End") then
+--		print("Keyframe : ".. frameName)
+		local repeatAnim = stopToolAnimations()
+		playToolAnimation(repeatAnim, 0.0, Humanoid)
+	end
+end
+
+
+function playToolAnimation(animName, transitionTime, humanoid)
+	if (animName ~= toolAnimName) then		 
+		
+		if (toolAnimTrack ~= nil) then
+			toolAnimTrack:Stop()
+			toolAnimTrack:Destroy()
+			transitionTime = 0
+		end
+
+		local roll = math.random(1, animTable[animName].totalWeight) 
+		local origRoll = roll
+		local idx = 1
+		while (roll > animTable[animName][idx].weight) do
+			roll = roll - animTable[animName][idx].weight
+			idx = idx + 1
+		end
+--		print(animName .. " * " .. idx .. " [" .. origRoll .. "]")
+		local anim = animTable[animName][idx].anim
+
+		-- load it to the humanoid; get AnimationTrack
+		toolAnimTrack = humanoid:LoadAnimation(anim)
+		 
+		-- play the animation
+		toolAnimTrack:Play(transitionTime)
+		toolAnimName = animName
+
+		currentToolAnimKeyframeHandler = toolAnimTrack.KeyframeReached:connect(toolKeyFrameReachedFunc)
+	end
+end
+
+function stopToolAnimations()
+	local oldAnim = toolAnimName
+
+	if (currentToolAnimKeyframeHandler ~= nil) then
+		currentToolAnimKeyframeHandler:disconnect()
+	end
+
+	toolAnimName = ""
+	if (toolAnimTrack ~= nil) then
+		toolAnimTrack:Stop()
+		toolAnimTrack:Destroy()
+		toolAnimTrack = nil
+	end
+
+
+	return oldAnim
+end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+function onRunning(speed)
+	if speed>0.01 then
+		playAnimation("walk", 0.1, Humanoid)
+		pose = "Running"
+	else
+		playAnimation("idle", 0.1, Humanoid)
+		pose = "Standing"
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	playAnimation("jump", 0.1, Humanoid)
+	jumpAnimTime = jumpAnimDuration
+	pose = "Jumping"
+end
+
+function onClimbing(speed)
+	playAnimation("climb", 0.1, Humanoid)
+	setAnimationSpeed(speed / 12.0)
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	if (jumpAnimTime <= 0) then
+		playAnimation("fall", fallTransitionTime, Humanoid)
+	end
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	pose = "Seated"
+end
+
+function onPlatformStanding()
+	pose = "PlatformStanding"
+end
+
+function onSwimming(speed)
+	if speed>0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function getTool()	
+	for _, kid in ipairs(Figure:GetChildren()) do
+		if kid.className == "Tool" then return kid end
+	end
+	return nil
+end
+
+function getToolAnim(tool)
+	for _, c in ipairs(tool:GetChildren()) do
+		if c.Name == "toolanim" and c.className == "StringValue" then
+			return c
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		playToolAnimation("toolnone", toolTransitionTime, Humanoid)
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		playToolAnimation("toolslash", 0, Humanoid)
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		playToolAnimation("toollunge", 0, Humanoid)
+		return
+	end
+end
+
+function moveSit()
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder:SetDesiredAngle(3.14 /2)
+	LeftShoulder:SetDesiredAngle(-3.14 /2)
+	RightHip:SetDesiredAngle(3.14 /2)
+	LeftHip:SetDesiredAngle(-3.14 /2)
+end
+
+local lastTick = 0
+
+function move(time)
+	local amplitude = 1
+	local frequency = 1
+  	local deltaTime = time - lastTick
+  	lastTick = time
+
+	local climbFudge = 0
+	local setAngles = false
+
+  	if (jumpAnimTime > 0) then
+  		jumpAnimTime = jumpAnimTime - deltaTime
+  	end
+
+	if (pose == "FreeFall" and jumpAnimTime <= 0) then
+		playAnimation("fall", fallTransitionTime, Humanoid)
+	elseif (pose == "Seated") then
+		stopAllAnimations()
+		moveSit()
+		return
+	elseif (pose == "Running") then
+		playAnimation("walk", 0.1, Humanoid)
+	elseif (pose == "Dead" or pose == "GettingUp" or pose == "FallingDown" or pose == "Seated" or pose == "PlatformStanding") then
+--		print("Wha " .. pose)
+		amplitude = 0.1
+		frequency = 1
+		setAngles = true
+	end
+
+	if (setAngles) then
+		desiredAngle = amplitude * math.sin(time * frequency)
+
+		RightShoulder:SetDesiredAngle(desiredAngle + climbFudge)
+		LeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)
+		RightHip:SetDesiredAngle(-desiredAngle)
+		LeftHip:SetDesiredAngle(-desiredAngle)
+	end
+
+	-- Tool Animation handling
+	local tool = getTool()
+	if tool then
+	
+		animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()		
+	else
+		stopToolAnimations()
+		toolAnim = "None"
+		toolAnimTime = 0
+	end
+end
+
+-- connect events
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+Humanoid.PlatformStanding:connect(onPlatformStanding)
+Humanoid.Swimming:connect(onSwimming)
+
+-- main program
+
+local runService = game:service("RunService");
+
+-- initialize to idle
+playAnimation("idle", 0.1, Humanoid)
+pose = "Standing"
+
+while Figure.Parent~=nil do
+	local _, time = wait(0.1)
+	move(time)
+end
+
+
+
+end))
+StringValue31.Name = "climb"
+StringValue31.Parent = Script30
+Animation32.Name = "ClimbAnim"
+Animation32.Parent = StringValue31
+Animation32.AnimationId = "http://www.roblox.com/asset/?id=125750800"
+StringValue33.Name = "fall"
+StringValue33.Parent = Script30
+Animation34.Name = "FallAnim"
+Animation34.Parent = StringValue33
+Animation34.AnimationId = "http://www.roblox.com/asset/?id=125750759"
+StringValue35.Name = "idle"
+StringValue35.Parent = Script30
+Animation36.Name = "Animation1"
+Animation36.Parent = StringValue35
+Animation36.AnimationId = "http://www.roblox.com/asset/?id=125750544"
+NumberValue37.Name = "Weight"
+NumberValue37.Parent = Animation36
+NumberValue37.Value = 9
+Animation38.Name = "Animation2"
+Animation38.Parent = StringValue35
+Animation38.AnimationId = "http://www.roblox.com/asset/?id=125750618"
+NumberValue39.Name = "Weight"
+NumberValue39.Parent = Animation38
+NumberValue39.Value = 1
+StringValue40.Name = "jump"
+StringValue40.Parent = Script30
+Animation41.Name = "JumpAnim"
+Animation41.Parent = StringValue40
+Animation41.AnimationId = "http://www.roblox.com/asset/?id=125750702"
+StringValue42.Name = "run"
+StringValue42.Parent = Script30
+Animation43.Name = "RunAnim"
+Animation43.Parent = StringValue42
+Animation43.AnimationId = "http://www.roblox.com/asset/?id=125749145"
+StringValue44.Name = "toolnone"
+StringValue44.Parent = Script30
+Animation45.Name = "ToolNoneAnim"
+Animation45.Parent = StringValue44
+Animation45.AnimationId = "http://www.roblox.com/asset/?id=125750867"
+StringValue46.Name = "walk"
+StringValue46.Parent = Script30
+Animation47.Name = "WalkAnim"
+Animation47.Parent = StringValue46
+Animation47.AnimationId = "http://www.roblox.com/asset/?id=125749145"
+Script48.Parent = Model6
+table.insert(cors,sandbox(Script48,function()
+local zombie = script.Parent
+
+for _, script in pairs(zombie.ModuleScripts:GetChildren()) do
+	if not game.ServerStorage:FindFirstChild(script.Name) then
+		script:Clone().Parent = game.ServerStorage
+	end
+end
+
+local AI = require(game.ServerStorage.ROBLOX_ZombieAI).new(zombie)
+local DestroyService = require(game.ServerStorage.ROBLOX_DestroyService)
+
+
+local function clearParts(parent)
+	for _, part in pairs(parent:GetChildren()) do
+		clearParts(part)
+	end
+	local delay
+	if parent:IsA("Part") then
+		delay = math.random(5,10)
+	else
+		delay = 11
+	end
+	DestroyService:AddItem(parent, delay)
+end
+
+zombie.Humanoid.Died:connect(function()
+	AI.Stop()
+	math.randomseed(tick())
+	clearParts(zombie)
+	script.Disabled = true
+end)
+
+local lastMoan = os.time()
+math.randomseed(os.time())
+while true do
+	local animationTrack = zombie.Humanoid:LoadAnimation(zombie.Animations.Arms)
+	animationTrack:Play()
+--	local now = os.time()
+--	if now - lastMoan > 5 then	
+--		if math.random() > .3 then
+--			zombie.Moan:Play()
+----			print("playing moan")
+--			lastMoan = now
+--		end
+--	end
+	wait(2)
+end
+
+
+end))
+BillboardGui49.Parent = Model6
+BillboardGui49.Size = UDim2.new(0, 100, 0, 30)
+BillboardGui49.StudsOffset = Vector3.new(0, 5, 0)
+TextLabel50.Parent = BillboardGui49
+TextLabel50.Visible = false
+TextLabel50.Size = UDim2.new(1, 0, 1, 0)
+TextLabel50.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel50.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel50.Font = Enum.Font.SourceSansBold
+TextLabel50.FontSize = Enum.FontSize.Size24
+TextLabel50.Text = "Idle"
+TextLabel50.TextSize = 24
+Configuration51.Name = "ModuleScripts"
+Configuration51.Parent = Model6
+ModuleScript52.Name = "ROBLOX_AIUtilities"
+ModuleScript52.Parent = Configuration51
+table.insert(cors,sandbox(ModuleScript52,function()
+local utility = {}
+
+function utility:WideRayCast(start, target, offset, ignoreList)
+	local parts = {}
+	
+	local ray = Ray.new(start, target - start)
+	local part, point = game.Workspace:FindPartOnRayWithIgnoreList(ray, ignoreList)
+	if part then table.insert(parts, part) end
+	
+	local offsetVector = offset * (target - start):Cross(Vector3.FromNormalId(Enum.NormalId.Top)).unit
+	local ray = Ray.new(start + offsetVector, target - start + offsetVector)
+	local part, point = game.Workspace:FindPartOnRayWithIgnoreList(ray, ignoreList)
+	if part then table.insert(parts, part) end
+	
+	local ray = Ray.new(start - offsetVector, target - start - offsetVector)
+	local part, point = game.Workspace:FindPartOnRayWithIgnoreList(ray, ignoreList)
+	if part then table.insert(parts, part) end
+	
+	return parts
+end
+
+function utility:FindNearestPathPoint(path, point, start, target, ignoreList)
+	local occludePoint = path:CheckOcclusionAsync(point)
+	if occludePoint > 0 then
+		utility:WideRayCast(start)
+	end
+end
+
+local maxForce = 15
+
+function utility:GetRepulsionVector(unitPosition, otherUnitsPositions)
+	local repulsionVector = Vector3.new(0,0,0)
+	local count = 0
+	for _, other in pairs(otherUnitsPositions) do
+		local fromOther = unitPosition - other 
+		--fromOther = fromOther.unit * ((-maxForce / 5) * math.pow(fromOther.magnitude,2) + maxForce)
+		fromOther = fromOther.unit * 1000 / math.pow((fromOther.magnitude + 1), 2)
+		repulsionVector = repulsionVector + fromOther
+	end
+	return repulsionVector * maxForce
+end
+
+function utility:GetIdleState(StateMachine)
+	local IdleState = StateMachine.NewState()
+	IdleState.Name = "Idle"
+	IdleState.Action = function() end
+	IdleState.Init = function() end
+	return IdleState
+end
+
+function utility:GetClosestVisibleTarget(npcModel, characters, ignoreList, fieldOfView)
+	local closestTarget = nil
+	local closestDistance = math.huge
+	for _, character in pairs(characters) do
+		local toTarget = character.HumanoidRootPart.Position - npcModel.HumanoidRootPart.Position
+		local toTargetWedge = toTarget * Vector3.new(1,0,1)
+		local angle = math.acos(toTargetWedge:Dot(npcModel.HumanoidRootPart.CFrame.lookVector)/toTargetWedge.magnitude)
+		if math.deg(angle) < fieldOfView then
+			local targetRay = Ray.new(npcModel.HumanoidRootPart.Position, toTarget)
+			local part, position = game.Workspace:FindPartOnRayWithIgnoreList(targetRay, ignoreList)
+			if part and part.Parent == character then
+				if toTarget.magnitude < closestDistance then
+					closestTarget = character
+					closestDistance = toTarget.magnitude
+				end
+			end
+		end
+	end
+	return closestTarget
+end
+
+local function isSpaceEmpty(position)
+	local region = Region3.new(position - Vector3.new(2,2,2), position + Vector3.new(2,2,2))
+	return game.Workspace:IsRegion3Empty(region)
+end
+
+function utility:FindCloseEmptySpace(model)
+	local targetPos = Vector3.new(0,0,0)
+	local count = 0
+	math.randomseed(os.time())
+	repeat
+		local xoff = math.random(5,10)
+		if math.random() > .5 then
+			xoff = xoff * -1
+		end
+		local zoff = math.random(5, 10)
+		if math.random() > .5 then
+			zoff = zoff * -1
+		end
+		
+		targetPos = Vector3.new(model.HumanoidRootPart.Position.X + xoff,model.HumanoidRootPart.Position.Y,model.HumanoidRootPart.Position.Z + zoff)
+		if isSpaceEmpty(targetPos) then
+			return targetPos
+		else
+			targetPos = targetPos + Vector3.new(0,4,0)
+		end
+		
+		if isSpaceEmpty(targetPos) then
+			return targetPos
+		end
+		count = count + 1
+	until count > 10
+	return nil
+end
+
+return utility
+end))
+ModuleScript53.Name = "ROBLOX_DestroyService"
+ModuleScript53.Parent = Configuration51
+table.insert(cors,sandbox(ModuleScript53,function()
+local destroyService = {}
+
+local destroyQueue = {}
+
+function destroyService:AddItem(theobject, delay)
+	local now = os.time()
+	local destroyObject = {object = theobject, destroyTime = delay + now}
+	for i, storedObject in pairs(destroyQueue) do
+		if destroyQueue[i].destroyTime > destroyObject.destroyTime then
+			table.insert(destroyQueue, i, destroyObject)
+			return true
+		end
+	end
+	table.insert(destroyQueue, destroyObject)
+	return true
+end
+
+local updateThread = coroutine.create(function()
+	while true do 
+		local now = os.time()
+		for _, storedObject in pairs(destroyQueue) do
+			if now >= storedObject.destroyTime then
+				table.remove(destroyQueue, 1)
+				if storedObject.object then
+					storedObject.object:Destroy()
+				end
+			elseif now >= storedObject.destroyTime - 1 then
+				
+				if storedObject.object and storedObject.object:IsA("Part") then
+					local trans = storedObject.object.Transparency + 1/30
+					storedObject.object.Transparency = trans
+				end
+			else 
+				break
+			end
+		end
+		wait()
+	end
+end)
+
+coroutine.resume(updateThread)
+
+return destroyService
+end))
+ModuleScript54.Name = "ROBLOX_HumanoidList"
+ModuleScript54.Parent = Configuration51
+table.insert(cors,sandbox(ModuleScript54,function()
+local humanoidList = {}
+local storage = {}
+
+function humanoidList:GetCurrent()
+	return storage
+end
+
+local function findHumanoids(object, list)
+	if object then
+		if object:IsA("Humanoid") and object.Parent.Name ~= "Min" then
+			table.insert(list, object)
+		end
+
+		for _, child in pairs(object:GetChildren()) do
+			local childList = findHumanoids(child, list)
+		end
+	end
+end
+
+local updateThread = coroutine.create(function()
+	while true do
+		storage = {}
+		findHumanoids(game.Workspace, storage)
+		wait(3)
+	end
+end)
+
+coroutine.resume(updateThread)
+
+return humanoidList
+end))
+ModuleScript55.Name = "ROBLOX_StateMachine"
+ModuleScript55.Parent = Configuration51
+table.insert(cors,sandbox(ModuleScript55,function()
+local machine = {}
+
+machine.new = function()
+	local StateMachine = {}	
+	
+	StateMachine.WaitTime = .2
+	StateMachine.CurrentState = nil
+	StateMachine.SwitchState = function(newState)
+		if StateMachine.CurrentState then
+			StateMachine.CurrentState.Stop()
+		end
+		StateMachine.CurrentState = newState
+		if newState then
+			newState.Start()
+		end
+	end
+	
+	StateMachine.NewState = function()
+		local state = {}
+		state.Name = ""
+		state.Conditions = {}
+		state.isRunning = false
+		state.Action = function() end
+		state.Run = function()
+			state.isRunning = true
+			while state.isRunning do
+				--check conditions
+				--print("checking conditions")
+				for _, condition in pairs(state.Conditions) do
+					--print("Checking " .. condition.Name)
+					if condition.Evaluate() then
+						--print(condition.Name .. " is true. Switching states")
+						StateMachine.SwitchState(condition.TransitionState)
+						return
+					end
+				end
+				
+				--if no conditions satisfied, perform action
+				state.Action()
+				wait(StateMachine.WaitTime)
+			end
+		end
+		state.Init = function()
+			
+		end
+		state.Start = function()
+			--print("Starting " .. state.Name)
+			state.Init()
+			local thread = coroutine.create(state.Run)
+			coroutine.resume(thread)
+		end
+		state.Stop = function()
+			--print("Stopping " .. state.Name)
+			state.isRunning = false
+		end
+		return state
+	end
+	
+	StateMachine.NewCondition = function()
+		local condition = {}
+		condition.Name = ""
+		condition.Evaluate = function() print("replace me") return false end
+		condition.TransitionState = {}
+		return condition
+	end	
+	
+	return StateMachine
+end
+
+return machine
+end))
+ModuleScript56.Name = "ROBLOX_ZombieAI"
+ModuleScript56.Parent = Configuration51
+table.insert(cors,sandbox(ModuleScript56,function()
+--local PathLib = require(game.ServerStorage.PathfindingLibrary).new()
+local HumanoidList = require(game.ServerStorage.ROBLOX_HumanoidList)
+local AIUtilities = require(game.ServerStorage.ROBLOX_AIUtilities)
+
+local ZombieAI = {}
+
+function updateDisplay(display, state)
+	local thread = coroutine.create(function()
+		while true do
+			wait()
+			if state then
+				display.Text = state.Name
+			end
+		end
+	end)
+	coroutine.resume(thread)
+end
+
+ZombieAI.new = function(model)	
+	local zombie = {}	
+	
+	-- CONFIGURATION VARIABLES
+--	local AttackRange, FieldOfView, AggroRange, ChanceOfBoredom, BoredomDuration, 
+--		Damage, DamageCooldown
+
+	local configTable = model.Configurations
+	local configs = {}
+	local function loadConfig(configName, defaultValue)
+		if configTable:FindFirstChild(configName) then
+			configs[configName] = configTable:FindFirstChild(configName).Value
+		else
+			configs[configName] = defaultValue
+		end
+	end
+
+	loadConfig("AttackRange", 3)
+	loadConfig("FieldOfView", 180)
+	loadConfig("AggroRange", 200)
+	loadConfig("ChanceOfBoredom", .5)
+	loadConfig("BoredomDuration", 10)
+	loadConfig("Damage", 10)
+	loadConfig("DamageCooldown", 1)
+	
+	local StateMachine = require(game.ServerStorage.ROBLOX_StateMachine).new()
+	local PathLib = require(game.ServerStorage.ROBLOX_PathfindingLibrary).new()
+	local ZombieTarget = nil	
+	local ZombieTargetLastLocation = nil
+	
+	local lastBored = os.time()	
+	
+	-- STATE DEFINITIONS	
+	
+	-- IdleState: NPC stays still. Refreshes bored timer when started to
+	-- allow for random state change
+	local IdleState = StateMachine.NewState()
+	IdleState.Name = "Idle"
+	IdleState.Action = function()
+	end
+	IdleState.Init = function()
+		lastBored = os.time()
+	end	
+	
+	-- SearchState: NPC wanders randomly increasing chance of spotting
+	-- enemy. Refreshed bored timer when started to allow for random state
+	-- change
+	local SearchState = StateMachine.NewState()
+	SearchState.Name = "Search"
+	local lastmoved = os.time()
+	local searchTarget = nil
+	SearchState.Action = function()
+		-- move to random spot nearby
+		if model then
+			local now = os.time()
+			if now - lastmoved > 2 then
+				lastmoved = now
+				local xoff = math.random(5, 10)
+				if math.random() > .5 then
+					xoff = xoff * -1
+				end
+				local zoff = math.random(5, 10)
+				if math.random() > .5 then
+					zoff = zoff * -1
+				end
+				
+				local testtarg = AIUtilities:FindCloseEmptySpace(model)
+				--if testtarg then print(testtarg) else print("could not find") end
+				searchTarget = Vector3.new(model.HumanoidRootPart.Position.X + xoff,model.HumanoidRootPart.Position.Y,model.HumanoidRootPart.Position.Z + zoff)
+				--local target = Vector3.new(model.HumanoidRootPart.Position.X + xoff,model.HumanoidRootPart.Position.Y,model.HumanoidRootPart.Position.Z + zoff)
+				--model.Humanoid:MoveTo(target)
+				searchTarget = testtarg
+			end
+			if searchTarget then
+				PathLib:MoveToTarget(model, searchTarget)
+			end
+		end
+	end
+	SearchState.Init = function()
+		lastBored = os.time()
+	end
+	
+	-- PursueState: Enemy has been spotted, need to give chase.
+	local PursueState = StateMachine.NewState()
+	PursueState.Name = "Pursue"
+	PursueState.Action = function()
+		-- Double check we still have target
+		if ZombieTarget then
+			-- Get distance to target
+			local distance = (model.HumanoidRootPart.Position - ZombieTarget.HumanoidRootPart.Position).magnitude
+			-- If we're far from target use pathfinding to move. Otherwise just MoveTo
+			if distance > configs["AttackRange"] + 5 then
+				PathLib:MoveToTarget(model, ZombieTarget.HumanoidRootPart.Position)
+			else
+				model.Humanoid:MoveTo(ZombieTarget.HumanoidRootPart.Position)
+--				if ZombieTarget.HumanoidRootPart.Position.Y > model.HumanoidRootPart.Position.Y + 2 then
+--					model.Humanoid.Jump = true
+--				end
+			end
+			
+		end
+	end
+	PursueState.Init = function()
+	end
+	
+	-- AttackState: Keep moving towards target and play attack animation.
+	local AttackState = StateMachine.NewState()
+	AttackState.Name = "Attack"
+	local lastAttack = os.time()
+	local attackTrack = model.Humanoid:LoadAnimation(model.Animations.Attack)
+	AttackState.Action = function()
+		model.Humanoid:MoveTo(ZombieTarget.HumanoidRootPart.Position)
+		local now = os.time()
+		if now - lastAttack > 3 then
+			lastAttack = now
+			attackTrack:Play()
+			local boom = Instance.new("Explosion",workspace)
+			boom.Position = ZombieTarget.Torso.Position
+		end
+	end
+	
+	-- HuntState: Can't see target but NPC will move to target's last known location.
+	-- Will eventually get bored and switch state.
+	local HuntState = StateMachine.NewState()
+	HuntState.Name = "Hunt"
+	HuntState.Action = function()
+		if ZombieTargetLastLocation then
+			PathLib:MoveToTarget(model, ZombieTargetLastLocation)
+		end
+	end
+	HuntState.Init = function()
+		lastBored = os.time() + configs["BoredomDuration"] / 2
+	end
+	
+	-- CONDITION DEFINITIONS	
+	
+	-- CanSeeTarget: Determines if a target is visible. Returns true if target is visible and
+	-- sets current target. A target is valid if it is nearby, visible, has a Torso and WalkSpeed
+	-- greater than 0 (this is to ignore inanimate objects that happen to use humanoids)
+	local CanSeeTarget = StateMachine.NewCondition()
+	CanSeeTarget.Name = "CanSeeTarget"
+	CanSeeTarget.Evaluate = function()
+		if model then
+			-- Get list of all nearby Zombies and non-Zombie humanoids
+			-- Zombie list is used to ignore zombies during later raycast
+			local humanoids = HumanoidList:GetCurrent()	
+			local zombies = {}
+			local characters = {}
+			for _, object in pairs(humanoids) do
+				if object and object.Parent and object.Parent:FindFirstChild("HumanoidRootPart") and object.Health > 0 and object.WalkSpeed > 0 then				
+					local torso = object.Parent:FindFirstChild("HumanoidRootPart")
+					if torso then
+						local distance = (model.HumanoidRootPart.Position - torso.Position).magnitude
+						if distance <= configs["AggroRange"] then
+							if object.Parent.Name == "Drooling Zombie" then
+								table.insert(zombies, object.Parent)
+							else
+								table.insert(characters, object.Parent)
+							end
+						end	
+					end	
+				end
+			end	
+			
+			local target = AIUtilities:GetClosestVisibleTarget(model, characters, zombies, configs["FieldOfView"])
+			if target then
+				ZombieTarget = target
+				return true
+			end
+			
+--			-- Go through each valid target to see if within field of view and if there is
+--			-- clear line of sight. Field of view treated as wedge in front of character.
+--			for _, character in pairs(characters) do
+--				local toTarget = (character.HumanoidRootPart.Position - model.HumanoidRootPart.Position)
+--				toTarget = Vector3.new(toTarget.X, 0, toTarget.Z)
+--				local angle = math.acos(toTarget:Dot(model.HumanoidRootPart.CFrame.lookVector)/toTarget.magnitude)
+--				if math.deg(angle) < configs["FieldOfView"]/2 then	
+--					ZombieTarget = character
+--					-- raycast to see if target is actually visible
+--					local toTarget = Ray.new(model.HumanoidRootPart.Position, (ZombieTarget.HumanoidRootPart.Position - model.HumanoidRootPart.Position))
+--					local part, position = game.Workspace:FindPartOnRayWithIgnoreList(toTarget, zombies)
+--					if part and part.Parent == ZombieTarget then
+--						return true
+--					end		
+--					ZombieTarget = nil						
+--				end
+--			end
+		end
+		return false
+	end
+	CanSeeTarget.TransitionState = PursueState
+	
+	-- TargetDead: Check if target is dead.
+	local TargetDead = StateMachine.NewCondition()
+	TargetDead.Name = "TargetDead"
+	TargetDead.Evaluate = function()
+		if ZombieTarget and ZombieTarget.Humanoid then
+			return ZombieTarget.Humanoid.Health <= 0
+		end
+		return true
+	end
+	TargetDead.TransitionState = IdleState
+	
+	-- GotDamaged: Check if NPC has taken damage
+	local lastHealth = model.Humanoid.Health
+	local GotDamaged = StateMachine.NewCondition()
+	GotDamaged.Name = "GotDamaged"
+	GotDamaged.Evaluate = function()
+		if model then
+			if lastHealth > model.Humanoid.Health then
+				return true
+			end
+		end
+		return false
+	end	
+	GotDamaged.TransitionState = SearchState
+	
+	-- GotBored: Used to provide random state change.
+	local GotBored = StateMachine.NewCondition()
+	GotBored.Name = "GotBored"
+	GotBored.Evaluate = function()
+		local now = os.time()
+		if now - lastBored > configs["BoredomDuration"] then
+			local roll = math.random()
+			if roll < configs["ChanceOfBoredom"] then
+				lastBored = now
+				if GotBored.TransitionState == SearchState then
+					GotBored.TransitionState = IdleState
+				else
+					GotBored.TransitionState = SearchState
+				end
+				return true
+			end
+		end
+		return false
+	end
+	GotBored.TransitionState = IdleState
+	
+	-- LostTarget: Checks clear line of sight
+	local LostTarget = StateMachine.NewCondition()
+	LostTarget.Name = "LostTarget"
+	LostTarget.Evaluate = function()
+		if true then return false end
+		if ZombieTarget then
+			if (ZombieTarget.HumanoidRootPart.Position - model.HumanoidRootPart.Position).magnitude > 10 then
+				local toTarget = Ray.new(model.HumanoidRootPart.Position, (ZombieTarget.HumanoidRootPart.Position - model.HumanoidRootPart.Position))
+				local part, position = game.Workspace:FindPartOnRay(toTarget, model)
+				if not part or part.Parent ~= ZombieTarget  then
+					--print("Lost target!")
+					ZombieTargetLastLocation = ZombieTarget.HumanoidRootPart.Position
+					ZombieTarget = nil
+					return true
+				end
+			end
+		end
+		return false
+	end
+	LostTarget.TransitionState = HuntState
+	
+	local WithinRange = StateMachine.NewCondition()
+	WithinRange.Name = "WithinRange"
+	WithinRange.Evaluate = function()
+		if ZombieTarget then
+			local distance = (model.HumanoidRootPart.Position - ZombieTarget.HumanoidRootPart.Position).magnitude
+			if distance < configs["AttackRange"] then
+				--print("Within attack range!")
+				return true
+			end
+		end
+		return false
+	end
+	WithinRange.TransitionState = AttackState
+	
+	local OutsideRange = StateMachine.NewCondition()
+	OutsideRange.Name = "OutsideRange"
+	OutsideRange.Evaluate = function()
+		if ZombieTarget then
+			local distance = (model.HumanoidRootPart.Position - ZombieTarget.HumanoidRootPart.Position).magnitude
+			if distance > configs["AttackRange"] then
+				--print("Outside attack range!")
+				return true
+			end
+		end
+		return false
+	end
+	OutsideRange.TransitionState = PursueState
+	
+	table.insert(IdleState.Conditions, CanSeeTarget)
+	table.insert(IdleState.Conditions, GotDamaged)
+	table.insert(IdleState.Conditions, GotBored)
+	
+	table.insert(SearchState.Conditions, GotBored)
+	table.insert(SearchState.Conditions, CanSeeTarget)
+	
+	table.insert(PursueState.Conditions, LostTarget)
+	table.insert(PursueState.Conditions, WithinRange)
+	table.insert(PursueState.Conditions, TargetDead)
+	
+	table.insert(AttackState.Conditions, OutsideRange)
+	table.insert(AttackState.Conditions, TargetDead)
+	
+	table.insert(HuntState.Conditions, GotBored)
+	table.insert(HuntState.Conditions, CanSeeTarget)
+	
+	-- Setup arms damage
+	local canHit = true
+	local lastHit = os.time()
+	local function handleHit(other)
+		if canHit then
+			if other and other.Parent and other.Parent.Name ~= "Drooling Zombie" and other.Parent:FindFirstChild("Humanoid") then
+				local enemy = other.Parent						
+				if enemy.Humanoid.WalkSpeed > 0 then
+					enemy.Humanoid.Health = enemy.Humanoid.Health - configs["Damage"]
+					canHit = false
+				end
+			end
+		else
+			local now = os.time()
+			if now - lastHit > configs["DamageCooldown"] then
+				lastHit = now
+				canHit = true
+			end
+		end
+	end	
+	local leftHitConnect, rightHitConnect
+	leftHitConnect = model:FindFirstChild("Left Arm").Touched:connect(handleHit)
+	rightHitConnect = model:FindFirstChild("Right Arm").Touched:connect(handleHit)
+	
+	--ZombieAI.Animate(model)
+	--updateDisplay()
+	--updateDisplay(model.BillboardGui.TextLabel, StateMachine.CurrentState)
+	local thread = coroutine.create(function()
+		while true do
+			wait()
+			-- calculate repulsion force
+						
+			local humanoids = HumanoidList:GetCurrent()
+			local localZombies = {}
+			for _, humanoid in pairs(humanoids) do
+				if humanoid and humanoid ~= model.Humanoid and humanoid.Parent and humanoid.Parent:FindFirstChild("HumanoidRootPart") then
+					local torso = humanoid.Parent:FindFirstChild("HumanoidRootPart")
+					local distance = (model.HumanoidRootPart.Position - torso.Position).magnitude
+					if distance <= 2.5 then
+						table.insert(localZombies, torso.Position)
+					end
+				end
+			end
+			local repulsionDirection = AIUtilities:GetRepulsionVector(model.HumanoidRootPart.Position, localZombies)
+			if repulsionDirection.magnitude > 0 then
+				--print("replusion direction: " .. tostring(repulsionDirection))
+			end
+			model.HumanoidRootPart.RepulsionForce.force = repulsionDirection
+			
+			if StateMachine.CurrentState and model.Configurations.Debug.Value then
+				model.BillboardGui.TextLabel.Visible = true
+				model.BillboardGui.TextLabel.Text = StateMachine.CurrentState.Name
+			end
+			if not model.Configurations.Debug.Value then
+				model.BillboardGui.TextLabel.Visible = false
+			end
+		end
+	end)
+	coroutine.resume(thread)	
+	
+	StateMachine.SwitchState(IdleState)
+	
+	zombie.Stop = function()
+		StateMachine.SwitchState(nil)
+	end	
+	
+	return zombie
+end
+
+return ZombieAI
+end))
+ModuleScript57.Name = "ROBLOX_PathfindingLibrary"
+ModuleScript57.Parent = Configuration51
+table.insert(cors,sandbox(ModuleScript57,function()
+local PathfindingUtility = {}
+local TargetOffsetMax = 10--5
+local JumpThreshold = 1.5 --2.5
+local NextPointThreshold = 4
+local PathfindingService = game:GetService("PathfindingService")
+PathfindingService.EmptyCutoff = .3
+
+function PathfindingUtility.new()
+	local this = {}
+	
+	local currentTargetPos = nil	
+	local lastTargetPos = Vector3.new(math.huge, math.huge, math.huge)	
+	local path = nil
+	local currentPointIndex = 1	
+	
+	function this:MoveToTarget(character, target)
+		local targetOffset = (lastTargetPos - target).magnitude
+--
+--		local targetOffsetVector = (lastTargetPos - target)
+--		if targetOffsetVector.magnitude < math.huge then
+--			targetOffsetVector = (lastTargetPos - target) * Vector3.new(1,0,1)	
+--		end
+		if targetOffset > TargetOffsetMax then
+		--if targetOffsetVector.magnitude > TargetOffsetMax then
+			--print("moveto")
+			local startPoint = character.HumanoidRootPart.Position
+			local humanoidState = character.Humanoid:GetState()
+			if humanoidState == Enum.HumanoidStateType.Jumping or humanoidState == Enum.HumanoidStateType.Freefall then
+				--print("this")				
+				local ray = Ray.new(character.HumanoidRootPart.Position, Vector3.new(0, -100, 0))
+				local hitPart, hitPoint = game.Workspace:FindPartOnRay(ray, character)
+				if hitPart then
+					startPoint = hitPoint
+				end
+			end
+			--print("making new path")
+			local newTarget = target
+			local ray = Ray.new(target + Vector3.new(0,-3,0), Vector3.new(0, -100, 0))			
+			local hitPart, hitPoint = game.Workspace:FindPartOnRay(ray, character)
+			if hitPoint then
+				if (hitPoint - target).magnitude > 4 then
+					newTarget = newTarget * Vector3.new(1,0,1) + Vector3.new(0,3,0)
+				end
+			end	
+			
+			--local newTarget = Vector3.new(1,0,1) * target + Vector3.new(0, 2, 0)
+			path = PathfindingService:ComputeSmoothPathAsync(startPoint, newTarget, 500)
+			if path.Status ~= Enum.PathStatus.Success then
+				--print(tostring(path.Status))
+			end
+			--path = PathfindingService:ComputeRawPathAsync(startPoint, target, 500)			
+			
+--			game.Workspace.Points:ClearAllChildren()
+--			local ps = path:GetPointCoordinates()
+--			for _, point in pairs(ps) do
+--				local part = Instance.new("Part", game.Workspace.Points)
+--				part.CanCollide = false
+--				part.Anchored = true
+--				part.FormFactor = Enum.FormFactor.Custom
+--				part.Size = Vector3.new(1,1,1)
+--				part.Position = point
+--			end			
+			
+			currentPointIndex = 1
+			lastTargetPos = target
+		end
+		
+		if path then
+			local points = path:GetPointCoordinates()
+			if currentPointIndex < #points then
+				local currentPoint = points[currentPointIndex]
+				local distance = (character.HumanoidRootPart.Position - currentPoint).magnitude
+				if distance < NextPointThreshold then
+					currentPointIndex = currentPointIndex + 1
+				end
+				
+				character.Humanoid:MoveTo(points[currentPointIndex])
+				if points[currentPointIndex].Y - character.HumanoidRootPart.Position.Y > JumpThreshold then
+					character.Humanoid.Jump = true
+				end
+			else
+				character.Humanoid:MoveTo(target)
+			end
+		end
+	end
+	
+	return this
+end
+return PathfindingUtility 
+end))
+Configuration58.Name = "Configurations"
+Configuration58.Parent = Model6
+IntValue59.Name = "Damage"
+IntValue59.Parent = Configuration58
+IntValue59.Value = 30
+BoolValue60.Name = "Debug"
+BoolValue60.Parent = Configuration58
+IntValue61.Name = "FieldOfView"
+IntValue61.Parent = Configuration58
+IntValue61.Value = 180
+IntValue62.Name = "AggroRange"
+IntValue62.Parent = Configuration58
+IntValue62.Value = 200
+Configuration63.Name = "Animations"
+Configuration63.Parent = Model6
+Animation64.Name = "Attack"
+Animation64.Parent = Configuration63
+Animation64.AnimationId = "http://www.roblox.com/asset/?id=180416148"
+Animation65.Name = "Arms"
+Animation65.Parent = Configuration63
+Animation65.AnimationId = "http://www.roblox.com/asset/?id=183294396"
+CharacterMesh66.Name = "Zombie Left Arm"
+CharacterMesh66.Parent = Model6
+CharacterMesh66.BodyPart = Enum.BodyPart.LeftArm
+CharacterMesh66.MeshId = 37683097
+CharacterMesh66.OverlayTextureId = 37686282
+CharacterMesh67.Name = "Zombie Left Leg"
+CharacterMesh67.Parent = Model6
+CharacterMesh67.BodyPart = Enum.BodyPart.LeftLeg
+CharacterMesh67.MeshId = 37683150
+CharacterMesh67.OverlayTextureId = 37687646
+CharacterMesh68.Name = "Zombie Right Arm"
+CharacterMesh68.Parent = Model6
+CharacterMesh68.BodyPart = Enum.BodyPart.RightArm
+CharacterMesh68.MeshId = 37683174
+CharacterMesh68.OverlayTextureId = 37686282
+CharacterMesh69.Name = "Zombie Right Leg"
+CharacterMesh69.Parent = Model6
+CharacterMesh69.BodyPart = Enum.BodyPart.RightLeg
+CharacterMesh69.MeshId = 37683227
+CharacterMesh69.OverlayTextureId = 37687646
+CharacterMesh70.Name = "Zombie torso"
+CharacterMesh70.Parent = Model6
+CharacterMesh70.BodyPart = Enum.BodyPart.Torso
+CharacterMesh70.MeshId = 37683263
+CharacterMesh70.OverlayTextureId = 37686282
+Script71.Name = "snd_1"
+Script71.Parent = Model6
+table.insert(cors,sandbox(Script71,function()
+local sounds = script.Parent.Torso.Sounds:GetChildren()
+
+while wait(math.random(1,5.2)) do
+	sounds[math.random(1,#sounds)]:Play()
+end
+end))
+BodyColors72.Parent = Model6
+BodyColors72.HeadColor = BrickColor.new("Camo")
+BodyColors72.HeadColor3 = Color3.new(0.227451, 0.490196, 0.0823529)
+BodyColors72.LeftArmColor = BrickColor.new("Earth green")
+BodyColors72.LeftArmColor3 = Color3.new(0.152941, 0.27451, 0.176471)
+BodyColors72.LeftLegColor = BrickColor.new("Earth green")
+BodyColors72.LeftLegColor3 = Color3.new(0.152941, 0.27451, 0.176471)
+BodyColors72.RightArmColor = BrickColor.new("Earth green")
+BodyColors72.RightArmColor3 = Color3.new(0.152941, 0.27451, 0.176471)
+BodyColors72.RightLegColor = BrickColor.new("Earth green")
+BodyColors72.RightLegColor3 = Color3.new(0.152941, 0.27451, 0.176471)
+BodyColors72.TorsoColor = BrickColor.new("Earth green")
+BodyColors72.TorsoColor3 = Color3.new(0.152941, 0.27451, 0.176471)
+Script73.Name = "moveMin"
+Script73.Parent = Tool0
+table.insert(cors,sandbox(Script73,function()
+script.Parent.Min.Parent = game:GetService("ReplicatedStorage")
+end))
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = workspace
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+Tool0.Parent = game.Players.spumato.Backpack
