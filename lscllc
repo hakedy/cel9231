@@ -1,0 +1,46 @@
+--[[
+	
+	
+	KEYBINDS
+	---------------
+	
+	F 
+	Brings everybody to you.
+	
+	R
+	Makes a hacker message (Toggles)	
+	
+--]]
+
+print"Running"
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local mouse = plr:GetMouse()
+local sid = "rbxasset://Sounds/switch.wav"
+local tool = Instance.new("Tool")
+local handle = Instance.new("Part")
+handle.Size = Vector3.new(2,4,2)
+handle.BrickColor = BrickColor.new("White")
+handle.Parent = char
+
+for _, v in pairs(char:GetChildren()) do
+	if v:IsA("BasePart") then
+		v.BrickColor = BrickColor.new("White")
+		local spark = Instance.new("Sparkles",v)
+		spark.SparkleColor = Color3.new(255,255,255)
+		spark.Enabled = true
+		spark.Name = "sparklez"
+	end
+end
+for _, v in pairs(char:GetChildren()) do
+	if v:IsA("Shirt") or v:IsA("Pants") then
+			v:Destroy()
+	end
+end
+
+mouse.KeyDown:connect(function(k)
+	print(k)
+	if k == "f" then
+			bringall()
+	end
+end)
