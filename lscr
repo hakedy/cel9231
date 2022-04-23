@@ -1,0 +1,45 @@
+--[[
+	Super scary local script nonsense.
+	
+	KEYBINDS
+	---------------
+	
+	F 
+	Brings everybody to you.
+	
+	R
+	Makes a hacker message (Toggles)	
+	
+--]]
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local mouse = plr:GetMouse()
+print'hello'
+local function bringall()
+	for _, v in pairs(game.Players:GetChildren()) do
+		if v ~= plr then
+			v.Character.HumanoidRootPart.CFrame = char.HumanoidRootPart.CFrame
+		end
+	end
+end
+local function createmessage()
+	if not workspace:FindFirstChild('-message') then
+		wait()
+		local Message = Instance.new("Message",workspace)
+		Message.Name = '-message'
+		Message.Text = 'You will all be hacked!!11 Muhahahhaa...'
+	else workspace:FindFirstChild('-message'):Destroy()
+end
+end
+
+mouse.KeyDown:connect(function(k)
+	print'down'
+	print(k)
+	if k == "f" then
+			bringall()
+	end
+	if k == "r" then
+		print'da'
+		createmessage()
+	end
+end)
