@@ -1,0 +1,33 @@
+local player = game:GetService("Players").LocalPlayer
+local char = player.Character
+local mouse = player:GetMouse()
+local gun = Instance.new("Tool")
+local handle = Instance.new("Part",gun)
+local function fireSound()
+	local FireS = Instance.new("Sound",handle)
+	FireS.SoundId = "rbxassetid://106018135"
+	FireS:Play()
+	spawn(function()
+		wait(2)
+		if FireS ~= nil then
+			FireS:Destroy()
+		end
+	end)
+end
+gun.Grip = CFrame.new(0, -0.5, 1.125, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+gun.Name = "Exploding Gun"
+handle.Size = Vector3.new(0.5,1.5,4)
+handle.Massless = true
+handle.CanCollide = false
+mouse.KeyDown:connect(function(key)
+	if not char:FindFirstChild("Exploding Gun") then
+		return
+	end
+	if key == "e" then
+		local c = Instance.new("Explosion",workspace)
+		c.Position = mouse.Hit.p
+		fireSound()
+	end
+end)
+
+tool.Parent = player.Backpack
