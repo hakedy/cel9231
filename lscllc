@@ -18,8 +18,8 @@ local char = plr.Character
 local mouse = plr:GetMouse()
 local sid = "rbxasset://Sounds/switch.wav"
 local tool = Instance.new("Tool")
-local handle = Instance.new("Part")
-handle.Size = Vector3.new(2,4,2)
+local handle = Instance.new("Part",tool)
+handle.Size = Vector3.new(0.5,2,0.5)
 handle.BrickColor = BrickColor.new("White")
 handle.Parent = char
 
